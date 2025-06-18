@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -62,6 +63,24 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         findViewById<Button>(R.id.btnVencimientos).setOnClickListener {
             startActivity(Intent(this, VencimientosActivity::class.java).putExtra("usuario", usuario))
         }
+
+        // Dashboard Tu Progreso
+        val itemCuatrimestre = findViewById<LinearLayout>(R.id.itemCuatrimestre)
+        val itemPromedio = findViewById<LinearLayout>(R.id.itemPromedio)
+        val itemAsistencia = findViewById<LinearLayout>(R.id.itemAsistencia)
+
+        // Función para no repetir código
+        fun setupProgressItem(container: LinearLayout, progress: Int, label: String) {
+            val indicator = container.findViewById<com.google.android.material.progressindicator.CircularProgressIndicator>(R.id.cpiValue)
+            val tvLabel   = container.findViewById<TextView>(R.id.tvLabel)
+            indicator.setProgressCompat(progress, true)
+            tvLabel.text = label
+        }
+
+        // Valores mock:
+        setupProgressItem(itemCuatrimestre,    90, getString(R.string.progress_cuatrimestre, 90))
+        setupProgressItem(itemPromedio,    88, getString(R.string.progress_promedio, 88))
+        setupProgressItem(itemAsistencia, 75, getString(R.string.progress_asistencia, 75))
     }
 
     override fun onBackPressed() {

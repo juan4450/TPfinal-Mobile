@@ -64,5 +64,10 @@
     <string name="detalle_materia_titulo_calificaciones">Calificaciones</string>
     <string name="detalle_materia_titulo_presentismo">Presentismo</string>
 
+    <!-- Dashboard Tu Progreso -->
+    <string name="home_progress_title">Tu progreso</string>
+    <string name="progress_cuatrimestre">%1$d%% del cuatrimestre completado</string>
+    <string name="progress_promedio">Promedio %1$d/100</string>
+    <string name="progress_asistencia">%1$d%% de asistencia</string>
 
 </resources>
