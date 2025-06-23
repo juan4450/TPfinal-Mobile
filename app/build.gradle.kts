@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.tpfinal_mobile"
+    namespace = "com.example.tpfinalmobile"
     compileSdk = 35
 
     defaultConfig {

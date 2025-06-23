@@ -9,12 +9,12 @@
     <string name="login_subtitle">Iniciar sesión</string>
     <string name="login_email_label">Email o usuario</string>
     <string name="login_email_hint">estudiante@universidad.edu</string>
-    <string name="login_email_desc">Campo para ingresar email</string>
+    <string name="login_email_desc">Campo de entrada para email o usuario</string>
     <string name="login_password_label">Contraseña</string>
     <string name="login_password_hint">Documento sin espacios ni guiones</string>
-    <string name="login_password_desc">Campo para ingresar contraseña</string>
+    <string name="login_password_desc">Campo de entrada para contraseña</string>
     <string name="login_button">INGRESAR</string>
-    <string name="login_help">Recuerda que tu contraseña es tu documento sin espacios ni guiones</string>
+    <string name="login_forgot_password">Olvidé mi contraseña</string>
 
     <!-- Perfil -->
     <string name="profile_title">Mi Perfil</string>
@@ -57,6 +57,7 @@
     <!-- Accesibilidad -->
     <string name="profile_image_description">Foto de perfil</string>
     <string name="logo_image_description">Ícono de graduación</string>
+    <string name="logo_app_desc">Ícono de graduación</string>
 
     <!-- Cronograma (si usado como texto estático) -->
     <string name="dia_lunes">Lunes</string>
@@ -68,7 +69,7 @@
     <string name="vencimiento_tp">TP Integrador Final</string>
     <string name="vencimiento_titulo_asignatura">Asignatura</string>
 
-    <!-- Otro) -->
+    <!-- Otros -->
     <string name="action_settings">Configuración</string>
     <string name="menu_home">Inicio</string>
     <string name="menu_gallery">Galería</string>

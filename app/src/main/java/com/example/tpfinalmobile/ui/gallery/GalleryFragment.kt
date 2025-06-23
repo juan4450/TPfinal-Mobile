@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.tpfinal_mobile.databinding.FragmentGalleryBinding
+import com.example.tpfinalmobile.databinding.FragmentGalleryBinding
 
 class GalleryFragment : Fragment() {
 
