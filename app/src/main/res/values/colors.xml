@@ -13,4 +13,5 @@
     <color name="textSecondary">#555555</color>
     <color name="hintGray">#9E9E9E</color>
     <color name="inputBorder">#DDDDDD</color>
+    <color name="grisOscuro">#666666</color>
 </resources>
