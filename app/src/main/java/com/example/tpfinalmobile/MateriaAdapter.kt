@@ -1,4 +1,4 @@
-package com.example.tpfinal_mobile
+package com.example.tpfinalmobile
 
 import android.content.Context
 import android.content.Intent
@@ -34,13 +34,7 @@ class MateriaAdapter(
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, DetalleMateriaActivity::class.java).apply {
-                putExtra("nombre", materia.nombre)
-                putExtra("nota", materia.nota)
-                putExtra("presentismo", materia.presentismo)
-                putExtra("tp", materia.tp)
-                putExtra("vencimiento", materia.vencimiento)
-                putExtra("profesor", materia.profesor)
-                putExtra("horarios", materia.horarios)
+                putExtra("materia", materia) // Envía el objeto completo
             }
             context.startActivity(intent)
         }

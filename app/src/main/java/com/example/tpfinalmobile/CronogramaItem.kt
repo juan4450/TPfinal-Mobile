@@ -1,4 +1,4 @@
-package com.example.tpfinal_mobile
+package com.example.tpfinalmobile
 
 data class CronogramaItem(
     val dia: String,

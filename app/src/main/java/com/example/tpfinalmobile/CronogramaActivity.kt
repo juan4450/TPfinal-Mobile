@@ -1,4 +1,4 @@
-package com.example.tpfinal_mobile
+package com.example.tpfinalmobile
 
 import android.content.Intent
 import android.os.Bundle

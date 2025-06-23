@@ -1,4 +1,4 @@
-package com.example.tpfinal_mobile.ui.home
+package com.example.tpfinalmobile.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

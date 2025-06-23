@@ -1,4 +1,4 @@
-package com.example.tpfinal_mobile.ui.slideshow
+package com.example.tpfinalmobile.ui.slideshow
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

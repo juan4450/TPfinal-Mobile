@@ -1,4 +1,4 @@
-package com.example.tpfinal_mobile
+package com.example.tpfinalmobile
 
 import android.view.LayoutInflater
 import android.view.View

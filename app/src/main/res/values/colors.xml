@@ -4,6 +4,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#042264</color>
     <color name="colorPrimaryDark">#000000</color>
+    <color name="colorPrimaryVariant">#001C40</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="backgroundWhite">#FFFFFF</color>
     <color name="colorAccent">#FF4081</color>
     <color name="menu_icon_gray">#A9A9A9</color>
+    <color name="textPrimary">#000000</color>
+    <color name="textSecondary">#555555</color>
+    <color name="hintGray">#9E9E9E</color>
+    <color name="inputBorder">#DDDDDD</color>
 </resources>
