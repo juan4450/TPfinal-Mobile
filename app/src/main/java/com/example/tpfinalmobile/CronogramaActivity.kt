@@ -10,6 +10,8 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tpfinalmobile.HomeActivity
+import com.example.tpfinalmobile.MateriasActivity
 import com.google.android.material.navigation.NavigationView
 
 class CronogramaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {

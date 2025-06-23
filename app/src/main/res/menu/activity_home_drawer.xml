@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_perfil" android:title="Mi Perfil" />
     <item android:id="@+id/nav_home" android:title="Inicio" />
     <item android:id="@+id/nav_materias" android:title="Materias" />
     <item android:id="@+id/nav_cronograma" android:title="Cronograma" />

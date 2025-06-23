@@ -1,4 +1,4 @@
-package com.example.tpfinal_mobile
+package com.example.tpfinalmobile
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,12 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tpfinal_mobile.CronogramaActivity
+import com.example.tpfinal_mobile.Materia
+import com.example.tpfinal_mobile.MateriaAdapter
+import com.example.tpfinal_mobile.R
+import com.example.tpfinal_mobile.VencimientosActivity
+import com.example.tpfinal_mobile.actualizarNavHeader
 import com.google.android.material.navigation.NavigationView
 
 class MateriasActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {

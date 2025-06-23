@@ -3,8 +3,6 @@ package com.example.tpfinalmobile
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -14,10 +12,9 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.example.tpfinal_mobile.CronogramaActivity
 import com.example.tpfinal_mobile.R
 import com.example.tpfinal_mobile.VencimientosActivity
-import com.example.tpfinal_mobile.actualizarNavHeader
 import com.google.android.material.navigation.NavigationView
 
-class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class PerfilActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
@@ -25,7 +22,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_profile)
 
         // Toolbar
         toolbar = findViewById(R.id.toolbar)
@@ -47,46 +44,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        // Obtener nombre de usuario
+        // Obtener nombre de usuario del intent
         val usuario = intent.getStringExtra("usuario") ?: "Usuario"
-        actualizarNavHeader(navigationView, usuario)
 
-        // Mostrar nombre en pantalla principal
-        val userName = findViewById<TextView>(R.id.userName)
-        userName.text = getString(R.string.home_welcome, usuario)
-
-        // Acciones de los botones
-        findViewById<Button>(R.id.btnMaterias).setOnClickListener {
-            startActivity(Intent(this, MateriasActivity::class.java).putExtra("usuario", usuario))
-        }
-
-        findViewById<Button>(R.id.btnCronograma).setOnClickListener {
-            startActivity(Intent(this, CronogramaActivity::class.java).putExtra("usuario", usuario))
-        }
-
-        findViewById<Button>(R.id.btnVencimientos).setOnClickListener {
-            startActivity(Intent(this, VencimientosActivity::class.java).putExtra("usuario", usuario))
-        }
-
-        // Dashboard Tu Progreso
-        val itemCuatrimestre = findViewById<LinearLayout>(R.id.itemCuatrimestre)
-        val itemPromedio = findViewById<LinearLayout>(R.id.itemPromedio)
-        val itemAsistencia = findViewById<LinearLayout>(R.id.itemAsistencia)
-
-        // Función para no repetir código
-        fun setupProgressItem(container: LinearLayout, progress: Int, label: String) {
-            val indicator = container.findViewById<com.google.android.material.progressindicator.CircularProgressIndicator>(
-                R.id.cpiValue
-            )
-            val tvLabel   = container.findViewById<TextView>(R.id.tvLabel)
-            indicator.setProgressCompat(progress, true)
-            tvLabel.text = label
-        }
-
-        // Valores mock:
-        setupProgressItem(itemCuatrimestre,    90, getString(R.string.progress_cuatrimestre, 90))
-        setupProgressItem(itemPromedio,    88, getString(R.string.progress_promedio, 88))
-        setupProgressItem(itemAsistencia, 75, getString(R.string.progress_asistencia, 75))
+        // Mostrar el nombre en el perfil
+        val nombreText = findViewById<TextView>(R.id.tvNombre)
+        nombreText.text = usuario
     }
 
     override fun onBackPressed() {
@@ -102,12 +65,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         when (item.itemId) {
             R.id.nav_home -> {
-                // Ya estás en esta pantalla
+                startActivity(Intent(this, HomeActivity::class.java).putExtra("usuario", usuario))
             }
-            R.id.nav_perfil -> {
-                startActivity(Intent(this, PerfilActivity::class.java).putExtra("usuario", usuario))
-            }
-
             R.id.nav_materias -> {
                 startActivity(Intent(this, MateriasActivity::class.java).putExtra("usuario", usuario))
             }
@@ -117,7 +76,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_vencimientos -> {
                 startActivity(Intent(this, VencimientosActivity::class.java).putExtra("usuario", usuario))
             }
+            R.id.nav_perfil -> {
+                // Estás en esta pantalla
+            }
         }
+
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
