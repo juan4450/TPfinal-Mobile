@@ -3,8 +3,7 @@ package com.example.tpfinalmobile
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -12,19 +11,23 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
-class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class DetalleVencimientoActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
     private lateinit var toolbar: Toolbar
     private lateinit var btnVolver: ImageView
-    private lateinit var btnVerVencimientos: TextView
+    private lateinit var btnDescargar: ImageView
+    private lateinit var tvEstadoEntrega: TextView
+    private lateinit var btnMarcarCompletado: Button
+
+    private var estadoEntregado = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detalle_materia)
+        setContentView(R.layout.activity_detalle_vencimiento)
 
-        // Toolbar y menú lateral
+        // Toolbar y Drawer
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
@@ -38,40 +41,42 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
             R.string.navigation_drawer_open,
             R.string.navigation_drawer_close
         )
-        toggle.drawerArrowDrawable.color = getColor(R.color.menu_icon_gray)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
+        toggle.drawerArrowDrawable.color = getColor(R.color.menu_icon_gray)
 
         val usuario = intent.getStringExtra("usuario") ?: "Usuario"
         actualizarNavHeader(navigationView, usuario)
 
-        // Botón de volver (flecha junto al título)
+        // Botón volver (al lado del título)
         btnVolver = findViewById(R.id.btnVolver)
         btnVolver.setOnClickListener {
             finish()
         }
 
-        // Botón "Ver vencimientos"
-        btnVerVencimientos = findViewById(R.id.btnVerVencimientos)
-
-        // Recibir materia enviada desde MateriasActivity
+        // Obtener materia
         val materia = intent.getSerializableExtra("materia") as? Materia
 
-        // Asignar datos si no es null
         materia?.let {
-            findViewById<TextView>(R.id.tvNombreMateria).text = it.nombre
-            findViewById<TextView>(R.id.tvProfesor).text = it.profesor
-            findViewById<TextView>(R.id.tvHorarios).text = it.horarios
-            findViewById<TextView>(R.id.tvTpFecha).text = it.vencimiento
-            findViewById<TextView>(R.id.tvTpDescripcion).text = it.tp
-            findViewById<TextView>(R.id.tvNota).text = "Nota: ${it.nota} (${estadoNota(it.nota)})"
-            findViewById<TextView>(R.id.tvPresentismo).text = "Presentismo: ${it.presentismo}%"
+            findViewById<TextView>(R.id.tvTituloMateria).text = it.nombre
+            findViewById<TextView>(R.id.tvTpDetalle).text = it.tp
+            findViewById<TextView>(R.id.tvApertura).text = "Apertura: ${aperturaMock(it.nombre)}"
+            findViewById<TextView>(R.id.tvCierre).text = "Cierre: ${it.vencimiento}"
+            tvEstadoEntrega = findViewById(R.id.tvEstadoEntrega)
+            tvEstadoEntrega.text = "Estado: Pendiente"
+        }
 
-            btnVerVencimientos.setOnClickListener {
-                val intent = Intent(this, DetalleVencimientoActivity::class.java)
-                intent.putExtra("materia", materia)
-                startActivity(intent)
-            }
+        // Simular descarga
+        btnDescargar = findViewById(R.id.ivDescargar)
+        btnDescargar.setOnClickListener {
+            Toast.makeText(this, "Descargando TP simulado...", Toast.LENGTH_SHORT).show()
+        }
+
+        // Botón marcar como completado
+        btnMarcarCompletado = findViewById(R.id.btnMarcarCompletado)
+        btnMarcarCompletado.setOnClickListener {
+            estadoEntregado = !estadoEntregado
+            tvEstadoEntrega.text = if (estadoEntregado) "Estado: Completado" else "Estado: Pendiente"
         }
     }
 
@@ -85,24 +90,23 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val usuario = intent.getStringExtra("usuario") ?: "Usuario"
-
         when (item.itemId) {
             R.id.nav_home -> startActivity(Intent(this, HomeActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_materias -> startActivity(Intent(this, MateriasActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_cronograma -> startActivity(Intent(this, CronogramaActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_vencimientos -> startActivity(Intent(this, VencimientosActivity::class.java).putExtra("usuario", usuario))
         }
-
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 
-    private fun estadoNota(nota: Int): String {
-        return when {
-            nota >= 7 -> "Promocionado"
-            nota == 6 -> "Zona de Promoción"
-            nota in 4..5 -> "Regular"
-            else -> "Libre"
+    private fun aperturaMock(nombre: String): String {
+        return when (nombre) {
+            "Desarrollo de Aplicaciones para Dispositivos Móviles" -> "15 de junio de 2025"
+            "Metodología de Prueba de Sistemas" -> "17 de junio de 2025"
+            "Desarrollo de Sistemas de Información Orientados a la Gestión y Apoyo a las Decisiones" -> "20 de junio de 2025"
+            "Tecnologías de la Información y Comunicación" -> "22 de junio de 2025"
+            else -> "Fecha no disponible"
         }
     }
 }

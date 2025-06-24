@@ -49,6 +49,7 @@ class MateriasActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                 tp = "TP Integrador Final",
                 nota = 8,
                 presentismo = 80,
+                apertura = "15 de mayo de 2025",
                 profesor = "Prof. Alejandro Peña",
                 horarios = "Martes 18hs a 22hs - Miércoles 18hs a 22hs"
             ),
@@ -57,6 +58,7 @@ class MateriasActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                 vencimiento = "3 de julio de 2025",
                 tp = "TP Final",
                 nota = 6,
+                apertura = "11 de mayo de 2025",
                 presentismo = 75,
                 profesor = "Prof. Martínez",
                 horarios = "Lunes 18hs a 22hs - Miércoles 18hs a 22hs"
@@ -65,6 +67,7 @@ class MateriasActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                 nombre = "Desarrollo de Sistemas de Información Orientados a la Gestión y Apoyo a las Decisiones",
                 vencimiento = "5 de julio de 2025",
                 tp = "TP Entregable",
+                apertura = "3 de junio de 2025",
                 nota = 7,
                 presentismo = 88,
                 profesor = "Prof. Fernández",
@@ -74,6 +77,7 @@ class MateriasActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                 nombre = "Tecnologías de la Información y Comunicación",
                 vencimiento = "10 de julio de 2025",
                 tp = "TP Parcial",
+                apertura = "7 de mayo de 2025",
                 nota = 5,
                 presentismo = 92,
                 profesor = "Prof. López",

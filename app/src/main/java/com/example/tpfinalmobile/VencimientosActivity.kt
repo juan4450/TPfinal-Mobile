@@ -66,7 +66,8 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
                 nota = 8,
                 presentismo = 80,
                 profesor = "Prof. Alejandro Peña",
-                horarios = "Martes 18hs a 22hs - Miércoles 18hs a 22hs"
+                horarios = "Martes 18hs a 22hs - Miércoles 18hs a 22hs",
+                apertura = "Martes 3 de junio de 2025, 00:00hs"
             ),
             Materia(
                 nombre = "Metodología de Prueba de Sistemas",
@@ -75,7 +76,8 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
                 nota = 6,
                 presentismo = 75,
                 profesor = "Prof. Martínez",
-                horarios = "Lunes 18hs a 22hs - Miércoles 18hs a 22hs"
+                horarios = "Lunes 18hs a 22hs - Miércoles 18hs a 22hs",
+                apertura = "Lunes 2 de junio de 2025, 00:00hs"
             ),
             Materia(
                 nombre = "Desarrollo de Sistemas de Información Orientados a la Gestión y Apoyo a las Decisiones",
@@ -84,7 +86,8 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
                 nota = 7,
                 presentismo = 88,
                 profesor = "Prof. Fernández",
-                horarios = "Martes 18hs a 22hs - Jueves 18hs a 22hs"
+                horarios = "Martes 18hs a 22hs - Jueves 18hs a 22hs",
+                apertura = "Martes 10 de junio de 2025, 00:00hs"
             ),
             Materia(
                 nombre = "Tecnologías de la Información y Comunicación",
@@ -93,13 +96,19 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
                 nota = 5,
                 presentismo = 92,
                 profesor = "Prof. López",
-                horarios = "Miércoles 18hs a 22hs - Viernes 18hs a 22hs"
+                horarios = "Miércoles 18hs a 22hs - Viernes 18hs a 22hs",
+                apertura = "Miércoles 5 de junio de 2025, 00:00hs"
             )
         )
 
         recyclerVencimientos = findViewById(R.id.recyclerVencimientos)
         recyclerVencimientos.layoutManager = LinearLayoutManager(this)
-        recyclerVencimientos.adapter = VencimientosAdapter(materias)
+        recyclerVencimientos.adapter = VencimientosAdapter(materias) { materiaSeleccionada ->
+            val intent = Intent(this, DetalleVencimientoActivity::class.java)
+            intent.putExtra("materia", materiaSeleccionada)
+            startActivity(intent)
+        }
+
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

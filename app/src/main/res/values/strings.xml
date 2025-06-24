@@ -71,4 +71,9 @@
     <string name="progress_promedio">Promedio %1$d/100</string>
     <string name="progress_asistencia">%1$d%% de asistencia</string>
 
+    <string name="detalle_tp">Detalle del Trabajo Práctico</string>
+    <string name="descargar">Descargar</string>
+    <string name="marcar_como_completada">Marcar como completada</string>
+    <string name="volver">Volver</string>
+
 </resources>

@@ -7,7 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class VencimientosAdapter(
-    private val listaMaterias: List<Materia>
+    private val listaMaterias: List<Materia>,
+    private val onItemClick: (Materia) -> Unit
 ) : RecyclerView.Adapter<VencimientosAdapter.MateriaViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MateriaViewHolder {
@@ -31,6 +32,11 @@ class VencimientosAdapter(
             tvNombreMateria.text = materia.nombre
             tvTp.text = materia.tp
             tvFecha.text = materia.vencimiento
+
+            itemView.setOnClickListener {
+                onItemClick(materia) // <-- Esto activa la navegación
+            }
         }
     }
 }
+

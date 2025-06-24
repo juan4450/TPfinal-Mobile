@@ -7,5 +7,7 @@ data class Materia(
     val nota: Int,
     val presentismo: Int,
     val profesor: String,
-    val horarios: String
+    val horarios: String,
+    val apertura: String
 ) : Serializable
+
