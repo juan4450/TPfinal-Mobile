@@ -16,6 +16,25 @@
     <string name="login_button">INGRESAR</string>
     <string name="login_forgot_password">Olvidé mi contraseña</string>
 
+    <!-- Perfil -->
+    <string name="profile_title">Mi Perfil</string>
+    <string name="profile_personalInformation">Información Personal</string>
+    <string name="profile_academicInformation">Información Académica</string>
+    <string name="profile_editButton">Editar</string>
+
+    <string name="profile_userName">Luján Maccari</string>
+    <string name="profile_userCareer">Tecnicatura Superior en Desarrollo de Software</string>
+    <string name="profile_userEmail">lujanmaccari@gmail.com</string>
+    <string name="profile_userID">12.345.678</string>
+
+    <string name="profile_admissionYear">Año de ingreso: 2024</string>
+    <string name="profile_subjects">Materias aprobadas: 13/23</string>
+    <string name="profile_average">Promedio general: 8.7</string>
+    <string name="profile_academicStatus">Estado académico: Regular</string>
+
+    <string name="profile_changePassword">CAMBIAR CONTRASEÑA</string>
+    <string name="profile_logout">CERRAR SESIÓN</string>
+
     <!-- Home -->
     <string name="home_toolbar_title">Track-Edu</string>
     <string name="home_user_details">IFTS 18 - Desarrollo de Software</string>
@@ -33,7 +52,7 @@
     <string name="nav_materias">Materias</string>
     <string name="nav_cronograma">Cronograma</string>
     <string name="nav_vencimientos">Vencimientos</string>
-    <string name="home_welcome">¡Bienvenide, %1$s!</string>
+    <string name="home_welcome">¡Bienvenido, %1$s!</string>
 
     <!-- Accesibilidad -->
     <string name="profile_image_description">Foto de perfil</string>
