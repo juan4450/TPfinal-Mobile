@@ -11,10 +11,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import com.example.tpfinal_mobile.CronogramaActivity
-import com.example.tpfinal_mobile.R
-import com.example.tpfinal_mobile.VencimientosActivity
-import com.example.tpfinal_mobile.actualizarNavHeader
+import com.example.tpfinalmobile.CronogramaActivity
+import com.example.tpfinalmobile.R
+import com.example.tpfinalmobile.VencimientosActivity
+import com.example.tpfinalmobile.actualizarNavHeader
 import com.google.android.material.navigation.NavigationView
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {

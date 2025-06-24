@@ -10,12 +10,12 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tpfinal_mobile.CronogramaActivity
-import com.example.tpfinal_mobile.Materia
-import com.example.tpfinal_mobile.MateriaAdapter
-import com.example.tpfinal_mobile.R
-import com.example.tpfinal_mobile.VencimientosActivity
-import com.example.tpfinal_mobile.actualizarNavHeader
+import com.example.tpfinalmobile.CronogramaActivity
+import com.example.tpfinalmobile.Materia
+import com.example.tpfinalmobile.MateriaAdapter
+import com.example.tpfinalmobile.R
+import com.example.tpfinalmobile.VencimientosActivity
+import com.example.tpfinalmobile.actualizarNavHeader
 import com.google.android.material.navigation.NavigationView
 
 class MateriasActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {

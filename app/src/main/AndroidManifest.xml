@@ -17,6 +17,7 @@
         <activity android:name=".MateriasActivity" android:exported="false" />
         <activity android:name=".CronogramaActivity" android:exported="false" />
         <activity android:name=".VencimientosActivity" android:exported="false" />
+        <activity android:name=".PerfilActivity" />
         <activity
             android:name=".HomeActivity"
             android:exported="false"
