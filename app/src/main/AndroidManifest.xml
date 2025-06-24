@@ -18,6 +18,7 @@
         <activity android:name=".CronogramaActivity" android:exported="false" />
         <activity android:name=".VencimientosActivity" android:exported="false" />
         <activity android:name=".PerfilActivity" />
+        <activity android:name=".CalificacionActivity" android:exported="false"/>
         <activity
             android:name=".HomeActivity"
             android:exported="false"

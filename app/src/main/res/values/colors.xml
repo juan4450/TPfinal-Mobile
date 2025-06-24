@@ -14,4 +14,5 @@
     <color name="hintGray">#9E9E9E</color>
     <color name="inputBorder">#DDDDDD</color>
     <color name="grisOscuro">#666666</color>
+    <color name="success">#5bd17a</color>
 </resources>

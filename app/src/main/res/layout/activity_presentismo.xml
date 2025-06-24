@@ -45,14 +45,16 @@
                         android:layout_height="24dp"
                         android:src="@drawable/ic_back"
                         android:contentDescription="Volver"
-                        android:layout_marginEnd="12dp" />
+                        android:layout_marginEnd="12dp"
+                        app:tint="@color/colorPrimary"
+                        />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Calificaciones"
                         android:textStyle="bold"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/colorPrimary"
                         android:textSize="20sp" />
                 </LinearLayout>
 
@@ -60,25 +62,43 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Desarrollo de Aplicaciones para Dispositivos Móviles"
+                    android:text="Des. de Aplicaciones para Dispositivos Móviles"
                     android:textSize="16sp"
                     android:layout_marginBottom="16dp" />
 
                 <!-- Condición de promoción -->
-                <TextView
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Condición de promoción"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="4dp" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_check"
+                        app:tint="@color/success"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Condición de promoción"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/success"/>
+                </LinearLayout>
+
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Promedio 88/100"
                     android:textSize="14sp"
-                    android:layout_marginBottom="12dp" />
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="5dp"/>
 
                 <!-- Barra de progreso -->
                 <ProgressBar
@@ -88,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:max="100"
                     android:progress="88"
-                    android:progressTint="@color/colorPrimary"
+                    android:progressTint="@color/grisOscuro"
                     android:indeterminateTint="@color/colorPrimary"
                     android:layout_marginBottom="24dp" />
 
@@ -98,13 +118,24 @@
                     android:layout_height="wrap_content"
                     android:text="Parciales"
                     android:textSize="14sp"
+                    android:layout_marginBottom="8dp"
                     android:textStyle="bold"
-                    android:layout_marginBottom="8dp" />
+                    android:textColor="@color/colorPrimaryDark"/>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#CCCCCC"
                     android:layout_marginBottom="16dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewPruebas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    tools:listitem="@layout/item_calificacion" />
+
+
 
                 <!-- Trabajos Prácticos -->
                 <TextView
@@ -112,13 +143,22 @@
                     android:layout_height="wrap_content"
                     android:text="Trabajos Prácticos"
                     android:textSize="14sp"
+                    android:layout_marginBottom="8dp"
                     android:textStyle="bold"
-                    android:layout_marginBottom="8dp" />
+                    android:textColor="@color/colorPrimaryDark"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#CCCCCC"
                     android:layout_marginBottom="16dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewTPs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    tools:listitem="@layout/item_calificacion"
+                    />
 
             </LinearLayout>
         </ScrollView>

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.card.MaterialCardView
 import com.google.android.material.navigation.NavigationView
 
 class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -19,6 +20,7 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
     private lateinit var toolbar: Toolbar
     private lateinit var btnVolver: ImageView
     private lateinit var btnVerVencimientos: TextView
+    private lateinit var cardCalificaciones: MaterialCardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,6 +74,13 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
                 intent.putExtra("materia", materia)
                 startActivity(intent)
             }
+        }
+
+        val cardCalificaciones = findViewById<MaterialCardView>(R.id.cardCalificaciones)
+
+        cardCalificaciones.setOnClickListener {
+            val intent = Intent(this, CalificacionActivity::class.java)
+            startActivity(intent)
         }
     }
 
