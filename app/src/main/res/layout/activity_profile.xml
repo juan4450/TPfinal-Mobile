@@ -9,15 +9,11 @@
     android:fitsSystemWindows="true"
     tools:context=".PerfilActivity">
 
-    <!-- Menú lateral -->
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white"
-        android:padding="16dp">
+        android:background="@android:color/white">
 
-        <!-- Toolbar -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="0dp"
@@ -25,66 +21,69 @@
             android:background="@color/colorPrimary"
             android:title="@string/app_name"
             android:titleTextColor="@android:color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:layout_constraintTop_toTopOf="parent"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- Título principal -->
         <TextView
             android:id="@+id/tvPerfilTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Mi Perfil"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/profile_title"
             android:textColor="@color/colorPrimary"
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
-        <!-- Sección: Info Personal -->
         <TextView
             android:id="@+id/tvInfoPersonal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="Información Personal"
+            android:text="@string/profile_personalInformation"
             android:textColor="@color/menu_icon_gray"
             android:textSize="14sp"
             android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvPerfilTitulo" />
 
+        <!-- Foto y nombre -->
         <Button
             android:id="@+id/btnEditar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:background="@android:color/transparent"
-            android:text="EDITAR"
+            android:text="@string/profile_editButton"
             android:textAllCaps="true"
             android:textColor="@color/menu_icon_gray"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/tvInfoPersonal" />
 
-        <!-- Foto y nombre -->
         <ImageView
             android:id="@+id/imgPerfil"
             android:layout_width="64dp"
             android:layout_height="64dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:contentDescription="Foto de perfil"
+            android:contentDescription="@string/profile_image_description"
             android:src="@drawable/profile_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvInfoPersonal" />
 
         <TextView
             android:id="@+id/tvNombre"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="296dp"
+            android:layout_height="28dp"
             android:layout_marginStart="12dp"
-            android:text="Luján Maccari"
+            android:text="@string/profile_userName"
             android:textColor="@color/colorPrimary"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -94,58 +93,60 @@
 
         <TextView
             android:id="@+id/tvCarrera"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="298dp"
+            android:layout_height="23dp"
             android:layout_marginStart="12dp"
-            android:text="Tecnicatura Superior en Desarrollo de Software"
+            android:text="@string/profile_userCareer"
             android:textColor="@color/colorPrimary"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/imgPerfil"
             app:layout_constraintTop_toBottomOf="@id/tvNombre" />
 
         <TextView
             android:id="@+id/tvEmail"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
-            android:drawableStart="@drawable/ic_email"
+            android:layout_width="365dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="4dp"
             android:drawablePadding="8dp"
-            android:text="lujanmaccari@gmail.com"
+            android:gravity="center_vertical"
+            android:text="@string/profile_userEmail"
             android:textColor="@color/colorPrimary"
+            app:drawableStartCompat="@drawable/ic_email"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.347"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgPerfil" />
 
         <TextView
             android:id="@+id/tvTelefono"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:drawableStart="@drawable/ic_idcard"
+            android:layout_width="364dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="8dp"
             android:drawablePadding="8dp"
-            android:text="12.345.678"
+            android:gravity="center_vertical"
+            android:text="@string/profile_userID"
             android:textColor="@color/colorPrimary"
+            app:drawableStartCompat="@drawable/ic_idcard"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.34"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvEmail" />
-
-        <!-- Info Académica -->
 
         <TextView
             android:id="@+id/tvInfoAcademica"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="84dp"
-            android:text="Información Académica"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/profile_academicInformation"
             android:textColor="@color/menu_icon_gray"
-            android:textSize="20sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTelefono" />
 
         <View
-            android:layout_width="0dp"
+            android:layout_width="385dp"
             android:layout_height="1dp"
             android:layout_marginTop="4dp"
             android:background="@color/menu_icon_gray"
@@ -157,12 +158,13 @@
             android:id="@+id/tvIngreso"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="72dp"
-            android:drawableStart="@drawable/ic_calendar"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
             android:drawablePadding="8dp"
-            android:text="Año de ingreso: 2024"
+            android:gravity="center_vertical"
+            android:text="@string/profile_admissionYear"
             android:textColor="@color/colorPrimary"
+            app:drawableStartCompat="@drawable/ic_calendar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvInfoAcademica" />
 
@@ -170,11 +172,13 @@
             android:id="@+id/tvMaterias"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:drawableStart="@drawable/ic_book"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
             android:drawablePadding="8dp"
-            android:text="Materias aprobadas: 13/23"
+            android:gravity="center_vertical"
+            android:text="@string/profile_subjects"
             android:textColor="@color/colorPrimary"
+            app:drawableStartCompat="@drawable/ic_book"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvIngreso" />
 
@@ -182,11 +186,13 @@
             android:id="@+id/tvPromedio"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:drawableStart="@drawable/ic_trendingup"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:drawablePadding="8dp"
-            android:text="Promedio general: 8.7"
+            android:gravity="center_vertical"
+            android:text="@string/profile_average"
             android:textColor="@color/colorPrimary"
+            app:drawableStartCompat="@drawable/ic_trendingup"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvMaterias" />
 
@@ -194,23 +200,23 @@
             android:id="@+id/tvEstado"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:drawableStart="@drawable/ic_graduationcap"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
             android:drawablePadding="8dp"
-            android:text="Estado académico: Regular"
+            android:gravity="center_vertical"
+            android:text="@string/profile_academicStatus"
             android:textColor="@color/colorPrimary"
+            app:drawableStartCompat="@drawable/ic_graduationcap"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvPromedio" />
-
-        <!-- Botones -->
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCambiarContrasena"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="24dp"
-            android:text="CAMBIAR CONTRASEÑA"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/profile_changePassword"
             android:textColor="@color/white"
             app:cornerRadius="24dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -220,13 +226,14 @@
             android:id="@+id/btnCerrarSesion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
-            android:text="CERRAR SESIÓN"
+            android:text="@string/profile_logout"
             android:textColor="@color/white"
             app:cornerRadius="24dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btnCambiarContrasena" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -237,4 +244,5 @@
         android:fitsSystemWindows="true"
         app:menu="@menu/activity_home_drawer"
         app:headerLayout="@layout/nav_header_home" />
+
 </androidx.drawerlayout.widget.DrawerLayout>

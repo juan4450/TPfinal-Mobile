@@ -5,13 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Contenido principal -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- Toolbar base (sin texto por defecto) -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -20,7 +18,6 @@
             android:elevation="4dp"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <!-- Encabezado personalizado -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,7 +30,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_back"
-                android:contentDescription="Volver"
+                android:contentDescription="@string/volver"
                 android:layout_marginEnd="12dp" />
 
             <TextView
@@ -41,35 +38,33 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Próximos vencimientos"
+                android:text="@string/vencimientos_titulo"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:textColor="@android:color/black" />
         </LinearLayout>
 
-        <!-- Subtítulo -->
         <TextView
             android:id="@+id/tvSubtitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="IFTS 18 - Desarrollo de Software"
+            android:text="@string/home_user_details"
             android:gravity="center"
             android:textSize="20sp"
             android:textColor="@android:color/darker_gray"
             android:layout_marginBottom="8dp" />
 
-        <!-- RecyclerView -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerVencimientos"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:padding="16dp"
             android:clipToPadding="false" />
     </LinearLayout>
 
-    <!-- Menú lateral -->
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"

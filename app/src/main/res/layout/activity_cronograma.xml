@@ -9,13 +9,11 @@
     tools:context=".CronogramaActivity"
     android:fitsSystemWindows="true">
 
-    <!-- Contenido principal -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- Toolbar -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -24,7 +22,6 @@
             android:titleTextColor="@android:color/white"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <!-- Lista del cronograma -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerCronograma"
             android:layout_width="match_parent"
@@ -33,7 +30,6 @@
             tools:listitem="@layout/item_cronograma" />
     </LinearLayout>
 
-    <!-- Menú lateral -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"

@@ -17,7 +17,7 @@
             android:layout_width="1dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Nombre de la materia"
+            android:text="@string/vencimiento_titulo_asignatura"
             android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="@android:color/black" />
@@ -26,7 +26,7 @@
             android:id="@+id/tvFecha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1 de julio de 2025"
+            android:text="@string/vencimiento_fecha"
             android:textStyle="bold"
             android:textSize="16sp"
             android:textColor="@android:color/black" />
@@ -36,7 +36,7 @@
         android:id="@+id/tvTp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TP Integrador Final"
+        android:text="@string/vencimiento_tp"
         android:textSize="16sp"
         android:textColor="@android:color/darker_gray" />
 

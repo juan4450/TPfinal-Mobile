@@ -10,14 +10,12 @@
     tools:context="com.example.tpfinalmobile.HomeActivity"
     tools:openDrawer="start">
 
-    <!-- Contenido principal -->
     <include
         layout="@layout/app_bar_home"
         android:id="@+id/app_bar_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!-- Menú lateral -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
