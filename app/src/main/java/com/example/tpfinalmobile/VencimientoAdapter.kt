@@ -4,38 +4,52 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.card.MaterialCardView
 
 class VencimientosAdapter(
-    private val listaMaterias: List<Materia>,
+    private val materias: List<Materia>,
     private val onItemClick: (Materia) -> Unit
-) : RecyclerView.Adapter<VencimientosAdapter.MateriaViewHolder>() {
+) : RecyclerView.Adapter<VencimientosAdapter.VencimientoViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MateriaViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VencimientoViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_vencimiento, parent, false)
-        return MateriaViewHolder(view)
+        return VencimientoViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: MateriaViewHolder, position: Int) {
-        holder.bind(listaMaterias[position])
+    override fun onBindViewHolder(holder: VencimientoViewHolder, position: Int) {
+        val materia = materias[position]
+        holder.bind(materia)
+        holder.itemView.setOnClickListener {
+            onItemClick(materia)
+        }
     }
 
-    override fun getItemCount(): Int = listaMaterias.size
+    override fun getItemCount(): Int = materias.size
 
-    inner class MateriaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val tvNombreMateria: TextView = itemView.findViewById(R.id.tvNombreMateria)
-        private val tvTp: TextView = itemView.findViewById(R.id.tvTp)
-        private val tvFecha: TextView = itemView.findViewById(R.id.tvFecha)
+    inner class VencimientoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val header: View = itemView.findViewById(R.id.headerVencimiento)
+        private val nombreMateria: TextView = itemView.findViewById(R.id.tvNombreMateria)
+        private val fecha: TextView = itemView.findViewById(R.id.tvFecha)
+        private val tp: TextView = itemView.findViewById(R.id.tvTp)
 
         fun bind(materia: Materia) {
-            tvNombreMateria.text = materia.nombre
-            tvTp.text = materia.tp
-            tvFecha.text = materia.vencimiento
+            nombreMateria.text = materia.nombre
+            fecha.text = materia.vencimiento
+            tp.text = materia.tp
 
-            itemView.setOnClickListener {
-                onItemClick(materia) // <-- Esto activa la navegación
+            val colorResId = when (materia.nombre) {
+                "Desarrollo de Aplicaciones para Dispositivos Móviles" -> R.color.colorMateria1
+                "Metodología de Prueba de Sistemas" -> R.color.colorMateria2
+                "Desarrollo de Sistemas de Información Orientados a la Gestión y Apoyo a las Decisiones" -> R.color.colorMateria3
+                "Tecnologías de la Información y Comunicación" -> R.color.colorMateria4
+                else -> R.color.colorPrimary
             }
+
+            val color = ContextCompat.getColor(itemView.context, colorResId)
+            header.setBackgroundColor(color)
         }
     }
 }

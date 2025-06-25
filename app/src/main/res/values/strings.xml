@@ -7,7 +7,16 @@
     <!-- General -->
     <string name="volver">Volver</string>
     <string name="ver_mas">Ver más</string>
+    <string name="back">Volver</string>
     <string name="action_settings">Configuración</string>
+    <string name="navigation_drawer_open">Abrir menú</string>
+    <string name="navigation_drawer_close">Cerrar menú</string>
+
+    <!-- Navegación Drawer -->
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Galería</string>
+    <string name="menu_slideshow">Presentación</string>
+    <string name="nav_cerrar_sesion">Cerrar sesión</string>
 
     <!-- Login -->
     <string name="login_title">Track-Edu</string>
@@ -20,26 +29,26 @@
     <string name="login_password_desc">Campo para ingresar contraseña</string>
     <string name="login_button">INGRESAR</string>
     <string name="login_forgot_password">Olvidé mi contraseña</string>
-    <string name="home_user_details">IFTS 18 - Desarrollo de Software</string>
 
     <!-- Home -->
     <string name="home_toolbar_title">Inicio</string>
     <string name="home_welcome">¡Bienvenido/a, %1$s!</string>
     <string name="home_user_hint">Hola, %1$s! </string>
+    <string name="home_user_details">IFTS 18 - Desarrollo de Software</string>
+    <string name="home_user_default">Estudiante</string>
     <string name="home_progress_title">Progreso académico</string>
     <string name="home_btn_materias">Materias</string>
     <string name="home_btn_cronograma">Cronograma</string>
     <string name="home_btn_vencimientos">Vencimientos</string>
     <string name="home_footer">Acerca de Track-Edu</string>
     <string name="title_activity_home">Track-Edu</string>
-    IFTS 18 - Desarrollo de Software
 
     <!-- Perfil -->
     <string name="profile_title">Perfil</string>
     <string name="profile_image_description">Imagen de perfil</string>
     <string name="profile_personalInformation">Información personal</string>
     <string name="profile_userName">Nombre completo</string>
-    <string name="profile_userCareer">Carrera</string>
+    <string name="profile_userCareer">Técnico Superior en Desarrollo de Software</string>
     <string name="profile_userEmail">Correo electrónico</string>
     <string name="profile_userID">Número de legajo</string>
     <string name="profile_editButton">Editar</string>
@@ -50,24 +59,37 @@
     <string name="profile_academicStatus">Estado académico</string>
     <string name="profile_changePassword">Cambiar contraseña</string>
     <string name="profile_logout">Cerrar sesión</string>
+    <string name="profile_admissionYear_label">Año de ingreso:</string>
+    <string name="profile_subjects_label">Materias aprobadas:</string>
+    <string name="profile_average_label">Promedio general:</string>
+    <string name="profile_academicStatus_label">Estado académico:</string>
 
     <!-- Materias -->
-    <string name="materias_titulo">Materias</string>
+    <string name="materias_titulo">Materias en curso</string>
     <string name="materia_nombre_demo">Des. Aplicaciones para Dispositivos Móviles</string>
     <string name="materia_profesor">Prof. Alejandro Peña</string>
     <string name="materia_horarios">Martes 18hs a 22hs - Miércoles 18hs a 22hs</string>
+    <string name="materias_subtitulo">IFTS 18 - Desarrollo de Software</string>
 
     <!-- Detalle Materia -->
     <string name="vencimiento_fecha">Próximo vencimiento</string>
     <string name="vencimiento_tp">TP n.º 3: App funcional</string>
     <string name="presentismo_valor">90%</string>
     <string name="calificaciones_nota">Nota: 9 (Promocionado)</string>
+    <string name="calificaciones_titulo">Calificaciones</string>
+    <string name="ver_calificaciones">Ver calificaciones</string>
+    <string name="presentismo_titulo">Presentismo</string>
+    <string name="ver_presentismo">Ver presentismo</string>
 
     <!-- Vencimientos -->
     <string name="vencimientos_titulo">Vencimientos</string>
     <string name="ver_vencimientos">Ver vencimientos</string>
     <string name="vencimiento_titulo">TP Pendiente</string>
     <string name="vencimiento_titulo_asignatura">Asignatura</string>
+    <string name="vencimiento_apertura">Apertura</string>
+    <string name="vencimiento_cierre">Cierre</string>
+    <string name="vencimiento_estado">Estado de la entrega</string>
+    <string name="marcar_como_completada">Marcar como completado</string>
 
     <!-- Cronograma -->
     <string name="dia_lunes">Lunes</string>
@@ -78,35 +100,28 @@
     <string name="detalle_tp">TP n.º 3: App funcional con navegación completa</string>
     <string name="nombre_materia_demo">Des. Aplicaciones para Dispositivos Móviles</string>
     <string name="logo_image_description">Logo de la app</string>
-
-    <!-- Detalle Materia -->
-    <string name="calificaciones_titulo">Calificaciones</string>
-    <string name="ver_calificaciones">Ver calificaciones</string>
-    <string name="presentismo_titulo">Presentismo</string>
-    <string name="ver_presentismo">Ver presentismo</string>
-
-    <!-- Detalle Vencimiento -->
     <string name="descargar">Descargar</string>
-    <string name="vencimiento_apertura">Apertura</string>
-    <string name="vencimiento_cierre">Cierre</string>
-    <string name="vencimiento_estado">Estado de la entrega</string>
-    <string name="marcar_como_completada">Marcar como completado</string>
 
-
-
-    <!-- Navegador -->
-    <string name="menu_home">Inicio</string>
-    <string name="menu_gallery">Galería</string>
-    <string name="menu_slideshow">Presentación</string>
-    <string name="navigation_drawer_open">Abrir menú</string>
-    <string name="navigation_drawer_close">Cerrar menú</string>
-
-    <!-- circulos de progreso-->
+    <!-- Indicadores -->
     <string name="progress_cuatrimestre">%1$d%% del cuatrimestre completado</string>
     <string name="progress_promedio">Promedio %1$d/100</string>
     <string name="progress_asistencia">%1$d%% de asistencia</string>
 
+    <!-- Mensajes de error -->
+    <string name="error_materia">No se encontró información de la materia</string>
+    <string name="error_materia_no_cargada">No se pudo cargar la materia</string>
 
+    <!-- Calificaciones -->
+    <string name="calificacion_materia_default">Materia</string>
+    <string name="condicion_promocion">Condición de promoción</string>
+    <string name="promedio_mock">Promedio 8.8/10</string>
+    <string name="label_parciales">Parciales</string>
+    <string name="label_trabajos">Trabajos Prácticos</string>
 
+    <!-- Estados académicos -->
+    <string name="estado_promocionado">Condición de promoción</string>
+    <string name="estado_regular">Regular</string>
+    <string name="estado_libre">Libre</string>
 
 </resources>
+

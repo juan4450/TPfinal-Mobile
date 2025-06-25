@@ -11,10 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import com.example.tpfinalmobile.CronogramaActivity
-import com.example.tpfinalmobile.R
-import com.example.tpfinalmobile.VencimientosActivity
-import com.example.tpfinalmobile.actualizarNavHeader
 import com.google.android.material.navigation.NavigationView
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -47,15 +43,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        // Obtener nombre de usuario
         val usuario = intent.getStringExtra("usuario") ?: "Usuario"
         actualizarNavHeader(navigationView, usuario)
 
-        // Mostrar nombre en pantalla principal
         val userName = findViewById<TextView>(R.id.userName)
         userName.text = getString(R.string.home_welcome, usuario)
 
-        // Acciones de los botones
         findViewById<Button>(R.id.btnMaterias).setOnClickListener {
             startActivity(Intent(this, MateriasActivity::class.java).putExtra("usuario", usuario))
         }
@@ -68,12 +61,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             startActivity(Intent(this, VencimientosActivity::class.java).putExtra("usuario", usuario))
         }
 
-        // Dashboard Tu Progreso
         val itemCuatrimestre = findViewById<LinearLayout>(R.id.itemCuatrimestre)
         val itemPromedio = findViewById<LinearLayout>(R.id.itemPromedio)
         val itemAsistencia = findViewById<LinearLayout>(R.id.itemAsistencia)
 
-        // Función para no repetir código
         fun setupProgressItem(container: LinearLayout, progress: Int, label: String) {
             val indicator = container.findViewById<com.google.android.material.progressindicator.CircularProgressIndicator>(
                 R.id.cpiValue
@@ -83,7 +74,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             tvLabel.text = label
         }
 
-        // Valores mock:
         setupProgressItem(itemCuatrimestre,    90, getString(R.string.progress_cuatrimestre, 90))
         setupProgressItem(itemPromedio,    88, getString(R.string.progress_promedio, 88))
         setupProgressItem(itemAsistencia, 75, getString(R.string.progress_asistencia, 75))
@@ -102,7 +92,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         when (item.itemId) {
             R.id.nav_home -> {
-                // Ya estás en esta pantalla
             }
             R.id.nav_perfil -> {
                 startActivity(Intent(this, PerfilActivity::class.java).putExtra("usuario", usuario))

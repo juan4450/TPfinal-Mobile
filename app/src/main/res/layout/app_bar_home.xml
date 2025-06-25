@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:padding="0dp">
 
-    <!-- Toolbar superior -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
@@ -18,19 +17,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Imagen de perfil -->
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/profileImage"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_margin="16dp"
+        android:layout_marginTop="24dp"
         android:src="@drawable/profile_image"
         android:contentDescription="@string/profile_image_description"
-        android:layout_marginTop="24dp"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/CircularImageView"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Nombre del usuario (actualizado dinámicamente) -->
     <TextView
         android:id="@+id/userName"
         android:layout_width="0dp"
@@ -44,7 +43,6 @@
         app:layout_constraintStart_toEndOf="@id/profileImage"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Descripción (puede ser fija o dinámica también) -->
     <TextView
         android:id="@+id/userDetails"
         android:layout_width="0dp"
@@ -55,7 +53,6 @@
         app:layout_constraintStart_toStartOf="@id/userName"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Título sección -->
     <TextView
         android:id="@+id/tvProgressTitle"
         android:layout_width="wrap_content"
@@ -69,7 +66,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/userDetails" />
 
-    <!-- Contenedor vertical de 3 items -->
     <LinearLayout
         android:id="@+id/llProgressContainer"
         android:layout_width="0dp"
@@ -83,7 +79,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvProgressTitle">
 
-        <!-- Reutilizo el mini layout de view_progress_item.xml -->
+
         <include layout="@layout/view_progress_item"
             android:id="@+id/itemCuatrimestre" />
 

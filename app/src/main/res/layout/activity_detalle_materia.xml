@@ -35,7 +35,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
-
         <TextView
             android:id="@+id/tvNombreMateria"
             android:layout_width="0dp"
@@ -73,6 +72,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvProfesor" />
 
+        <!-- CARD: VENCIMIENTO -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardVencimiento"
             android:layout_width="0dp"
@@ -87,10 +87,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/headerVencimiento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorPrimary"
@@ -147,13 +147,13 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-
+        <!-- CARD: CALIFICACIONES -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardCalificaciones"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-             android:layout_margin="16dp"
+            android:layout_margin="16dp"
             app:cardCornerRadius="24dp"
             app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -166,6 +166,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/headerCalificaciones"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorPrimary"
@@ -213,6 +214,7 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- CARD: PRESENTISMO -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardPresentismo"
             android:layout_width="0dp"
@@ -232,6 +234,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/headerPresentismo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorPrimary"
@@ -278,7 +281,6 @@
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -290,3 +292,4 @@
         app:headerLayout="@layout/nav_header_home"
         app:menu="@menu/activity_home_drawer" />
 </androidx.drawerlayout.widget.DrawerLayout>
+

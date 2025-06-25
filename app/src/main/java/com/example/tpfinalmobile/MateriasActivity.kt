@@ -3,6 +3,7 @@ package com.example.tpfinalmobile
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.ImageView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -10,12 +11,6 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tpfinalmobile.CronogramaActivity
-import com.example.tpfinalmobile.Materia
-import com.example.tpfinalmobile.MateriaAdapter
-import com.example.tpfinalmobile.R
-import com.example.tpfinalmobile.VencimientosActivity
-import com.example.tpfinalmobile.actualizarNavHeader
 import com.google.android.material.navigation.NavigationView
 
 class MateriasActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -91,9 +86,13 @@ class MateriasActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
             )
         )
 
+        findViewById<ImageView>(R.id.btnVolver).setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerMaterias)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = MateriaAdapter(materias, this)
+        recyclerView.adapter = MateriaAdapter(materias, this, usuario)
     }
 
     override fun onBackPressed() {

@@ -1,21 +1,18 @@
-// VencimientosActivity.kt
 package com.example.tpfinalmobile
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tpfinalmobile.HomeActivity
-import com.example.tpfinalmobile.MateriasActivity
 import com.google.android.material.navigation.NavigationView
 
 class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -28,16 +25,16 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vencimientos)
+        val usuario = intent.getStringExtra("usuario") ?: "Usuario"
 
-        // Toolbar personalizada
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        // DrawerLayout y NavigationView
         drawerLayout = findViewById(R.id.drawer_layout)
         navigationView = findViewById(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
+        actualizarNavHeader(navigationView, usuario)
 
         val toggle = ActionBarDrawerToggle(
             this,
@@ -48,18 +45,16 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
+        toggle.drawerArrowDrawable.color = ContextCompat.getColor(this, android.R.color.darker_gray)
 
-        // Botón volver (ícono a la izquierda del título)
         val btnVolver: ImageView = findViewById(R.id.btnVolver)
         btnVolver.setOnClickListener {
             finish()
         }
 
-        // Título
         val titulo: TextView = findViewById(R.id.tvTitulo)
         titulo.text = "Próximos vencimientos"
 
-        // Lista de materias (mockeadas)
         val materias = listOf(
             Materia(
                 nombre = "Desarrollo de Aplicaciones para Dispositivos Móviles",
@@ -108,13 +103,48 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
         recyclerVencimientos.adapter = VencimientosAdapter(materias) { materiaSeleccionada ->
             val intent = Intent(this, DetalleVencimientoActivity::class.java)
             intent.putExtra("materia", materiaSeleccionada)
+            intent.putExtra("usuario", usuario)
             startActivity(intent)
         }
 
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Implementa acciones al seleccionar items si agregás más
+        val usuario = intent.getStringExtra("usuario") ?: "Usuario"
+
+        when (item.itemId) {
+            R.id.nav_perfil -> startActivity(
+                Intent(
+                    this,
+                    PerfilActivity::class.java
+                ).putExtra("usuario", usuario)
+            )
+
+            R.id.nav_home -> startActivity(
+                Intent(
+                    this,
+                    HomeActivity::class.java
+                ).putExtra("usuario", usuario)
+            )
+
+            R.id.nav_materias -> startActivity(
+                Intent(
+                    this,
+                    MateriasActivity::class.java
+                ).putExtra("usuario", usuario)
+            )
+
+            R.id.nav_cronograma -> startActivity(
+                Intent(
+                    this,
+                    CronogramaActivity::class.java
+                ).putExtra("usuario", usuario)
+            )
+
+            R.id.nav_vencimientos -> { /* Ya estás aquí */
+            }
+        }
+
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }

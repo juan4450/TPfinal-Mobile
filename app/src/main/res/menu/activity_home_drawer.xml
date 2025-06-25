@@ -5,4 +5,5 @@
     <item android:id="@+id/nav_materias" android:title="Materias" />
     <item android:id="@+id/nav_cronograma" android:title="Cronograma" />
     <item android:id="@+id/nav_vencimientos" android:title="Vencimientos" />
+    <item android:id="@+id/nav_logout" android:title="Cerrar sesión"/>
 </menu>

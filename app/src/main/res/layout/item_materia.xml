@@ -1,5 +1,4 @@
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -10,30 +9,40 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="12dp">
+        android:orientation="vertical">
 
+        <!-- CABECERA COLOR -->
         <TextView
             android:id="@+id/txtTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
-            android:background="#0D1B54"
+            android:text="@string/vencimiento_titulo_asignatura"
             android:padding="8dp"
-            android:text="@string/vencimiento_titulo_asignatura" />
+            android:background="@color/header_color_default" />
 
-        <TextView
-            android:id="@+id/txtVencimientos"
-            android:layout_width="wrap_content"
+        <!-- CUERPO BLANCO -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/vencimientos_titulo" />
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:padding="12dp">
 
-        <TextView
-            android:id="@+id/txtTp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/vencimiento_tp" />
+            <TextView
+                android:id="@+id/txtVencimientos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vencimientos_titulo" />
+
+            <TextView
+                android:id="@+id/txtTp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vencimiento_tp" />
+        </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
+
+

@@ -10,8 +10,6 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tpfinalmobile.HomeActivity
-import com.example.tpfinalmobile.MateriasActivity
 import com.google.android.material.navigation.NavigationView
 
 class CronogramaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -24,7 +22,6 @@ class CronogramaActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cronograma)
 
-        // Toolbar
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
@@ -43,11 +40,9 @@ class CronogramaActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        // Usuario desde login
         val usuario = intent.getStringExtra("usuario") ?: "Usuario"
         actualizarNavHeader(navigationView, usuario)
 
-        // Lista mock
         val cronograma = listOf(
             CronogramaItem("Lunes", "18:00 a 22:00 hs", "Desarrollo de Aplicaciones para Dispositivos Móviles"),
             CronogramaItem("Martes", "18:00 a 22:00 hs", "Metodología de Prueba de Sistemas"),
@@ -72,6 +67,7 @@ class CronogramaActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         val usuario = intent.getStringExtra("usuario") ?: "Usuario"
 
         when (item.itemId) {
+            R.id.nav_perfil -> startActivity(Intent(this, PerfilActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_home -> startActivity(Intent(this, HomeActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_materias -> startActivity(Intent(this, MateriasActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_cronograma -> { /* ya estás aquí */ }
@@ -82,4 +78,5 @@ class CronogramaActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         return true
     }
 }
+
 

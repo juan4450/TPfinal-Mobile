@@ -10,6 +10,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import androidx.core.content.ContextCompat
 
 class DetalleVencimientoActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -48,13 +49,11 @@ class DetalleVencimientoActivity : AppCompatActivity(), NavigationView.OnNavigat
         val usuario = intent.getStringExtra("usuario") ?: "Usuario"
         actualizarNavHeader(navigationView, usuario)
 
-        // Botón volver (al lado del título)
         btnVolver = findViewById(R.id.btnVolver)
         btnVolver.setOnClickListener {
             finish()
         }
 
-        // Obtener materia
         val materia = intent.getSerializableExtra("materia") as? Materia
 
         materia?.let {
@@ -66,18 +65,28 @@ class DetalleVencimientoActivity : AppCompatActivity(), NavigationView.OnNavigat
             tvEstadoEntrega.text = "Estado: Pendiente"
         }
 
-        // Simular descarga
         btnDescargar = findViewById(R.id.ivDescargar)
         btnDescargar.setOnClickListener {
             Toast.makeText(this, "Descargando TP simulado...", Toast.LENGTH_SHORT).show()
         }
 
-        // Botón marcar como completado
         btnMarcarCompletado = findViewById(R.id.btnMarcarCompletado)
+        tvEstadoEntrega = findViewById(R.id.tvEstadoEntrega)
+
+        val colorResId = when (materia?.nombre) {
+            "Desarrollo de Aplicaciones para Dispositivos Móviles" -> R.color.colorMateria1
+            "Metodología de Prueba de Sistemas" -> R.color.colorMateria2
+            "Desarrollo de Sistemas de Información Orientados a la Gestión y Apoyo a las Decisiones" -> R.color.colorMateria3
+            "Tecnologías de la Información y Comunicación" -> R.color.colorMateria4
+            else -> R.color.colorPrimary
+        }
+        btnMarcarCompletado.setBackgroundColor(ContextCompat.getColor(this, colorResId))
+
         btnMarcarCompletado.setOnClickListener {
             estadoEntregado = !estadoEntregado
             tvEstadoEntrega.text = if (estadoEntregado) "Estado: Completado" else "Estado: Pendiente"
         }
+
     }
 
     override fun onBackPressed() {
@@ -91,6 +100,7 @@ class DetalleVencimientoActivity : AppCompatActivity(), NavigationView.OnNavigat
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val usuario = intent.getStringExtra("usuario") ?: "Usuario"
         when (item.itemId) {
+            R.id.nav_perfil -> startActivity(Intent(this, PerfilActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_home -> startActivity(Intent(this, HomeActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_materias -> startActivity(Intent(this, MateriasActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_cronograma -> startActivity(Intent(this, CronogramaActivity::class.java).putExtra("usuario", usuario))

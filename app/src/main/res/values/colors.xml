@@ -15,4 +15,11 @@
     <color name="inputBorder">#DDDDDD</color>
     <color name="grisOscuro">#666666</color>
     <color name="success">#5bd17a</color>
+    <color name="button">#1AA49F</color>
+    <color name="colorMateria1">#005B58</color>
+    <color name="colorMateria2">#4765A4</color>
+    <color name="colorMateria3">#614AA9</color>
+    <color name="colorMateria4">#2B56B2</color>
+    <color name="header_color_default">#0D1B54</color>
+
 </resources>

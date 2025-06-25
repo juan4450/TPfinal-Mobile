@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.card.MaterialCardView
@@ -26,7 +27,6 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalle_materia)
 
-        // Toolbar y menú lateral
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
@@ -47,19 +47,15 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
         val usuario = intent.getStringExtra("usuario") ?: "Usuario"
         actualizarNavHeader(navigationView, usuario)
 
-        // Botón de volver (flecha junto al título)
         btnVolver = findViewById(R.id.btnVolver)
         btnVolver.setOnClickListener {
             finish()
         }
 
-        // Botón "Ver vencimientos"
         btnVerVencimientos = findViewById(R.id.btnVerVencimientos)
 
-        // Recibir materia enviada desde MateriasActivity
         val materia = intent.getSerializableExtra("materia") as? Materia
 
-        // Asignar datos si no es null
         materia?.let {
             findViewById<TextView>(R.id.tvNombreMateria).text = it.nombre
             findViewById<TextView>(R.id.tvProfesor).text = it.profesor
@@ -72,14 +68,29 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
             btnVerVencimientos.setOnClickListener {
                 val intent = Intent(this, DetalleVencimientoActivity::class.java)
                 intent.putExtra("materia", materia)
+                intent.putExtra("usuario", usuario) // ✅ Pasar el nombre de usuario
                 startActivity(intent)
             }
+
+            val colorResId = when (it.nombre) {
+                "Desarrollo de Aplicaciones para Dispositivos Móviles" -> R.color.colorMateria1
+                "Metodología de Prueba de Sistemas" -> R.color.colorMateria2
+                "Desarrollo de Sistemas de Información Orientados a la Gestión y Apoyo a las Decisiones" -> R.color.colorMateria3
+                "Tecnologías de la Información y Comunicación" -> R.color.colorMateria4
+                else -> R.color.colorPrimary
+            }
+            val color = ContextCompat.getColor(this, colorResId)
+
+            findViewById<android.view.View>(R.id.headerVencimiento).setBackgroundColor(color)
+            findViewById<android.view.View>(R.id.headerCalificaciones).setBackgroundColor(color)
+            findViewById<android.view.View>(R.id.headerPresentismo).setBackgroundColor(color)
         }
 
-        val cardCalificaciones = findViewById<MaterialCardView>(R.id.cardCalificaciones)
-
+        cardCalificaciones = findViewById(R.id.cardCalificaciones)
         cardCalificaciones.setOnClickListener {
             val intent = Intent(this, CalificacionActivity::class.java)
+            intent.putExtra("usuario", usuario)
+            intent.putExtra("materia", materia)
             startActivity(intent)
         }
     }
@@ -96,6 +107,7 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
         val usuario = intent.getStringExtra("usuario") ?: "Usuario"
 
         when (item.itemId) {
+            R.id.nav_perfil -> startActivity(Intent(this, PerfilActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_home -> startActivity(Intent(this, HomeActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_materias -> startActivity(Intent(this, MateriasActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_cronograma -> startActivity(Intent(this, CronogramaActivity::class.java).putExtra("usuario", usuario))
@@ -115,3 +127,4 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
         }
     }
 }
+
