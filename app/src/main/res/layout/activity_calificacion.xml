@@ -110,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:max="100"
                     android:progress="88"
-                    android:progressTint="@color/grisOscuro"
+                    android:progressTint="@color/progressBar"
                     android:indeterminateTint="@color/colorPrimary"
                     android:layout_marginBottom="24dp" />
 

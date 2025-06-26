@@ -123,5 +123,10 @@
     <string name="estado_regular">Regular</string>
     <string name="estado_libre">Libre</string>
 
+    <!-- Presentismo -->
+    <string name="asistencia_condicion">Cumple con el mínimo de asistencia</string>
+    <string name="asistencia_fecha">Fecha</string>
+    <string name="asistencia">Asistencia</string>
+
 </resources>
 

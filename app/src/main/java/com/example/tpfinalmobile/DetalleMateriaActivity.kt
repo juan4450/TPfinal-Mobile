@@ -22,6 +22,8 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
     private lateinit var btnVolver: ImageView
     private lateinit var btnVerVencimientos: TextView
     private lateinit var cardCalificaciones: MaterialCardView
+    private lateinit var cardPresentismo: MaterialCardView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -92,6 +94,17 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
             intent.putExtra("usuario", usuario)
             intent.putExtra("materia", materia)
             startActivity(intent)
+        }
+
+        cardPresentismo = findViewById(R.id.cardPresentismo)
+        cardPresentismo.setOnClickListener {
+            materia?.let {
+            val intent = Intent(this, PresentismoActivity::class.java)
+            intent.putExtra("usuario", usuario)
+            intent.putExtra("materia", it.nombre)
+            intent.putExtra("presentismo", it.presentismo)
+            startActivity(intent)
+            }
         }
     }
 

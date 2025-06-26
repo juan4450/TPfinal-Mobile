@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <!-- Botón volver -->
+            <ImageView
+                android:id="@+id/btnVolver"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_back"
+                android:contentDescription="@string/volver"
+                android:layout_marginEnd="12dp" />
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/presentismo_titulo"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <!-- Nombre de la materia -->
+        <TextView
+            android:id="@+id/tvMateria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+
+            <!-- Icono check -->
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_check"
+                app:tint="@color/success"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Condición de asistencia -->
+            <TextView
+                android:id="@+id/tvCondicion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/asistencia_condicion"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/success"/>
+        </LinearLayout>
+
+        <!-- Porcentaje de asistencia -->
+        <TextView
+            android:id="@+id/tvPorcentaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="75% de asistencia"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/menu_icon_gray" />
+
+        <!-- Barra de progreso -->
+        <ProgressBar
+            android:id="@+id/progressBarHorizontal"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="88"
+            android:progressTint="@color/progressBar"
+            android:indeterminateTint="@color/colorPrimary"
+            android:layout_marginBottom="24dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/asistencia_fecha"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/asistencia"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:gravity="end"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/menu_icon_gray"
+            android:layout_marginBottom="8dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerAsistencias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false" />
+    </LinearLayout>
+</ScrollView>
+
