@@ -35,10 +35,13 @@ class PresentismoActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             R.string.navigation_drawer_open,
             R.string.navigation_drawer_close
         )
+        toggle.drawerArrowDrawable.color = getColor(R.color.menu_icon_gray)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        // Cargo el fragment sólo si es la primera vez
+        val usuario = intent.getStringExtra("usuario") ?: "Usuario"
+        actualizarNavHeader(navigationView, usuario)
+
         if (savedInstanceState == null) {
             val materia = intent.getStringExtra("materia") ?: "Sin nombre"
             val presentismo = intent.getIntExtra("presentismo", 0)
@@ -50,6 +53,7 @@ class PresentismoActivity : AppCompatActivity(), NavigationView.OnNavigationItem
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        val usuario = intent.getStringExtra("usuario") ?: "Usuario"
         when (item.itemId) {
             R.id.nav_home -> startActivity(Intent(this, HomeActivity::class.java))
             R.id.nav_materias -> startActivity(Intent(this, MateriasActivity::class.java))

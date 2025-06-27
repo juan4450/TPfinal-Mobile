@@ -135,34 +135,35 @@ class CalificacionActivity : AppCompatActivity(), NavigationView.OnNavigationIte
 
     // Simulación de notas por materia (puede variar)
     private fun notaParcial1(nombre: String): String = when (nombre) {
-        "Desarrollo de Aplicaciones para Dispositivos Móviles" -> "9"
+        "App. para dispositivos Móviles" -> "9"
         "Metodología de Prueba de Sistemas" -> "6"
-        "Desarrollo de Sistemas de Información Orientados a la Gestión y Apoyo a las Decisiones" -> "8"
-        "Tecnologías de la Información y Comunicación" -> "5"
+        "Práctica Profesional II" -> "8"
+        "Tecnologías de la Información" -> "5"
         else -> "0"
     }
 
     private fun notaParcial2(nombre: String): String = when (nombre) {
-        "Desarrollo de Aplicaciones para Dispositivos Móviles" -> "7.5"
+        "App. para dispositivos Móviles" -> "7.5"
         "Metodología de Prueba de Sistemas" -> "6"
-        "Desarrollo de Sistemas de Información Orientados a la Gestión y Apoyo a las Decisiones" -> "7"
-        "Tecnologías de la Información y Comunicación" -> "5"
+        "Práctica Profesional II" -> "7"
+        "Tecnologías de la Información" -> "5"
         else -> "0"
     }
 
     private fun notaTp1(nombre: String): String = when (nombre) {
-        "Desarrollo de Aplicaciones para Dispositivos Móviles" -> "8"
+        "App. para dispositivos Móviles" -> "8"
         "Metodología de Prueba de Sistemas" -> "6.5"
-        "Desarrollo de Sistemas de Información Orientados a la Gestión y Apoyo a las Decisiones" -> "7.5"
-        "Tecnologías de la Información y Comunicación" -> "4"
+        "Práctica Profesional II" -> "7.5"
+        "Tecnologías de la Información" -> "4"
         else -> "0"
     }
 
     private fun notaTpFinal(nombre: String): String = when (nombre) {
-        "Desarrollo de Aplicaciones para Dispositivos Móviles" -> "10"
+        "App. para dispositivos Móviles" -> "10"
         "Metodología de Prueba de Sistemas" -> "7"
-        "Desarrollo de Sistemas de Información Orientados a la Gestión y Apoyo a las Decisiones" -> "8"
-        "Tecnologías de la Información y Comunicación" -> "5"
+        "Práctica Profesional II" -> "8"
+        "Tecnologías de la Información" -> "5"
         else -> "0"
     }
+
 }

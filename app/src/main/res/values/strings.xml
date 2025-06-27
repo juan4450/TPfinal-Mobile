@@ -44,7 +44,7 @@
     <string name="title_activity_home">Track-Edu</string>
 
     <!-- Perfil -->
-    <string name="profile_title">Perfil</string>
+    <string name="profile_title">Mi perfil</string>
     <string name="profile_image_description">Imagen de perfil</string>
     <string name="profile_personalInformation">Información personal</string>
     <string name="profile_userName">Nombre completo</string>
@@ -93,7 +93,7 @@
 
     <!-- Cronograma -->
     <string name="dia_lunes">Lunes</string>
-    <string name="horario_1800_2100">18:00 - 21:00</string>
+    <string name="horario_1800_2100">18:00 – 21:00</string>
     <string name="materia_programacion_iii">Programación III</string>
 
     <!-- Detalle Vencimiento -->
@@ -127,6 +127,22 @@
     <string name="asistencia_condicion">Cumple con el mínimo de asistencia</string>
     <string name="asistencia_fecha">Fecha</string>
     <string name="asistencia">Asistencia</string>
+
+    <string name="materia_obligatoria">Materia obligatoria</string>
+    <string name="materia_obligatoria_texto">Este icono indica que la aprobación de la materia es condición obligatoria para avanzar en el plan de estudios</string>
+
+    <string name="proximos_vencimientos">Próximos Vencimientos</string>
+    <string name="marcar_como_completa">Marcar como completa</string>
+
+    <string name="asistencias">Asistencias</string>
+    <string name="promedios">Promedios</string>
+    <string name="cronograma">Cronograma</string>
+    <string name="bajo_desempeno">Bajo</string>
+    <string name="medio_desempeno">Medio</string>
+    <string name="alto_desempeno">Alto</string>
+    <string name="asistencia_icono">🕓</string>
+    <string name="promedio_icono">⭐</string>
+
 
 </resources>
 

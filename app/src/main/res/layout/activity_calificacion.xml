@@ -31,7 +31,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Header con flecha + título -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -45,7 +44,7 @@
                         android:layout_height="24dp"
                         android:src="@drawable/ic_back"
                         android:contentDescription="Volver"
-                        android:layout_marginEnd="12dp"
+                        android:layout_marginEnd="16dp"
                         app:tint="@color/colorPrimary" />
 
                     <TextView
@@ -54,10 +53,9 @@
                         android:text="Calificaciones"
                         android:textStyle="bold"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="20sp" />
+                        android:textSize="24sp" />
                 </LinearLayout>
 
-                <!-- Título grande de la materia -->
                 <TextView
                     android:id="@+id/txtTitulo"
                     android:layout_width="match_parent"
@@ -68,7 +66,6 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:layout_marginBottom="8dp" />
 
-                <!-- Condición de promoción -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -88,38 +85,35 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Condición de promoción"
-                        android:textSize="14sp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="@color/success"/>
                 </LinearLayout>
 
-                <!-- Promedio -->
                 <TextView
                     android:id="@+id/tvPromedio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Promedio 8.5/10"
-                    android:textSize="14sp"
+                    android:textSize="18sp"
                     android:layout_marginBottom="12dp" />
 
-                <!-- Barra de progreso -->
                 <ProgressBar
                     android:id="@+id/progressBarHorizontal"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:indeterminateTint="@color/colorPrimary"
                     android:max="100"
                     android:progress="88"
-                    android:progressTint="@color/progressBar"
-                    android:indeterminateTint="@color/colorPrimary"
-                    android:layout_marginBottom="24dp" />
+                    android:progressTint="@color/colorMateria1" />
 
-                <!-- Parciales -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Parciales"
-                    android:textSize="14sp"
+                    android:textSize="20sp"
                     android:layout_marginBottom="8dp"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimaryDark"/>
@@ -137,12 +131,11 @@
                     android:layout_marginBottom="16dp"
                     tools:listitem="@layout/item_calificacion" />
 
-                <!-- Trabajos Prácticos -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Trabajos Prácticos"
-                    android:textSize="14sp"
+                    android:textSize="20sp"
                     android:layout_marginBottom="8dp"
                     android:textStyle="bold"
                     android:textColor="@color/colorPrimaryDark"/>

@@ -16,12 +16,23 @@
     <color name="grisOscuro">#666666</color>
     <color name="success">#34C759</color>
     <color name="error">#B3261E</color>
-    <color name="button">#1AA49F</color>
-    <color name="colorMateria1">#005B58</color>
-    <color name="colorMateria2">#4765A4</color>
-    <color name="colorMateria3">#614AA9</color>
-    <color name="colorMateria4">#2B56B2</color>
+    <color name="button">#FF6301</color>
+    <color name="colorMateria1">#FF6301</color>
+    <color name="colorMateria2">#FF6301</color>
+    <color name="colorMateria3">#FF6301</color>
+    <color name="colorMateria4">#FF6301</color>
     <color name="header_color_default">#0D1B54</color>
     <color name="progressBar">#FF6301</color>
+    <color name="colorGreen">#009688</color>
+    <color name="colorRed">#FF3D00</color>
+    <color name="colorItemBackground">#F5F5F5</color>
+    <color name="colorItemBackgroundRed">#FFF3F0</color>
+    <color name="green_check">#4CAF50</color>
+    <color name="orange_star">#FF6301</color>
+    <color name="red_alert">#EF5350</color>
+    <color name="warning">#FF9800</color>
+    <color name="danger">#F44336</color>
+
+
 
 </resources>

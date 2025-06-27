@@ -2,9 +2,11 @@ package com.example.tpfinalmobile
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.PorterDuff
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -12,10 +14,10 @@ import androidx.recyclerview.widget.RecyclerView
 class MateriaAdapter(
     private val materias: List<Materia>,
     private val context: Context,
-    private val usuario: String  // ✅ Coma agregada y parámetro incluido
+    private val usuario: String
 ) : RecyclerView.Adapter<MateriaAdapter.MateriaViewHolder>() {
 
-    private val coloresCabecera = listOf(
+    private val coloresFondo = listOf(
         R.color.colorMateria1,
         R.color.colorMateria2,
         R.color.colorMateria3,
@@ -23,9 +25,9 @@ class MateriaAdapter(
     )
 
     class MateriaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val txtTitulo: TextView = itemView.findViewById(R.id.txtTitulo)
-        val txtVencimientos: TextView = itemView.findViewById(R.id.txtVencimientos)
-        val txtTp: TextView = itemView.findViewById(R.id.txtTp)
+        val tvNombreMateria: TextView = itemView.findViewById(R.id.tvNombreMateria)
+        val ivObligatoria: ImageView = itemView.findViewById(R.id.ivObligatoria)
+        val layoutBoton: View = itemView.findViewById(R.id.layoutBotonMateria)  // 👈 asegurate que lo tenga en item_materia_simple.xml
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MateriaViewHolder {
@@ -37,18 +39,20 @@ class MateriaAdapter(
     override fun onBindViewHolder(holder: MateriaViewHolder, position: Int) {
         val materia = materias[position]
 
-        holder.txtTitulo.text = materia.nombre
-        holder.txtVencimientos.text = "Vencimiento: ${materia.vencimiento}"
-        holder.txtTp.text = materia.tp
-
-        val colorRes = coloresCabecera[position % coloresCabecera.size]
+        holder.tvNombreMateria.text = materia.nombre
+        holder.ivObligatoria.visibility = if (materia.esObligatoria) View.VISIBLE else View.GONE
+        holder.ivObligatoria.setColorFilter(
+            ContextCompat.getColor(context, android.R.color.white),
+            PorterDuff.Mode.SRC_IN
+        )
+        val colorRes = coloresFondo[position % coloresFondo.size]
         val color = ContextCompat.getColor(context, colorRes)
-        holder.txtTitulo.setBackgroundColor(color)
+        holder.layoutBoton.setBackgroundColor(color)
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, DetalleMateriaActivity::class.java).apply {
                 putExtra("materia", materia)
-                putExtra("usuario", usuario)  // ✅ El usuario ahora se pasa correctamente
+                putExtra("usuario", usuario)
             }
             context.startActivity(intent)
         }
@@ -56,3 +60,6 @@ class MateriaAdapter(
 
     override fun getItemCount(): Int = materias.size
 }
+
+
+

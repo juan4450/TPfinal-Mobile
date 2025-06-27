@@ -75,12 +75,12 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
             }
 
             val colorResId = when (it.nombre) {
-                "Desarrollo de Aplicaciones para Dispositivos Móviles" -> R.color.colorMateria1
-                "Metodología de Prueba de Sistemas" -> R.color.colorMateria2
-                "Desarrollo de Sistemas de Información Orientados a la Gestión y Apoyo a las Decisiones" -> R.color.colorMateria3
-                "Tecnologías de la Información y Comunicación" -> R.color.colorMateria4
-                else -> R.color.colorPrimary
-            }
+            "App. para dispositivos Móviles" -> R.color.colorMateria1
+            "Metodología de Prueba de Sistemas" -> R.color.colorMateria2
+            "Práctica Profesional II" -> R.color.colorMateria3
+            "Tecnologías de la Información" -> R.color.colorMateria4
+            else -> R.color.colorPrimary
+        }
             val color = ContextCompat.getColor(this, colorResId)
 
             findViewById<android.view.View>(R.id.headerVencimiento).setBackgroundColor(color)

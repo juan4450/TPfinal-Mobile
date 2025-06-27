@@ -10,6 +10,6 @@ fun actualizarNavHeader(navigationView: NavigationView, usuario: String) {
     val headerName = headerView.findViewById<TextView>(R.id.headerName)
     val headerEmail = headerView.findViewById<TextView>(R.id.headerEmail)
 
-    headerName.text = "¡Bienvenide, $usuario!"
+    headerName.text = "¡$usuario!"
     headerEmail.text = "$usuario@email.com"
 }

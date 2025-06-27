@@ -1,5 +1,7 @@
 package com.example.tpfinalmobile
+
 import java.io.Serializable
+
 data class Materia(
     val nombre: String,
     val vencimiento: String,
@@ -8,6 +10,8 @@ data class Materia(
     val presentismo: Int,
     val profesor: String,
     val horarios: String,
-    val apertura: String
+    val apertura: String,
+    val esObligatoria: Boolean = false
 ) : Serializable
+
 

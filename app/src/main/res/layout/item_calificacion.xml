@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:text="Primer Parcial"
-            android:textSize="15sp"
+            android:textSize="18sp"
             android:textColor="#333333" />
 
         <TextView
@@ -29,7 +29,7 @@
             android:layout_weight="0.5"
             android:gravity="end"
             android:text="90/100"
-            android:textSize="15sp"
+            android:textSize="18sp"
             android:textColor="@color/grisOscuro" />
     </LinearLayout>
 

@@ -14,6 +14,29 @@
         android:layout_height="match_parent"
         android:background="@android:color/white">
 
+        <View
+            android:id="@+id/view"
+            android:layout_width="385dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="36dp"
+            android:background="@color/menu_icon_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCarrera" />
+
+        <TextView
+            android:id="@+id/tvInfoPersonal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/profile_personalInformation"
+            android:textColor="@color/grisOscuro"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="0dp"
@@ -21,10 +44,10 @@
             android:background="@color/colorPrimary"
             android:title="@string/app_name"
             android:titleTextColor="@android:color/white"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <!-- Título principal -->
         <TextView
@@ -40,43 +63,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
-        <TextView
-            android:id="@+id/tvInfoPersonal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/profile_personalInformation"
-            android:textColor="@color/menu_icon_gray"
-            android:textSize="14sp"
-            android:textStyle="normal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvPerfilTitulo" />
-
         <!-- Foto y nombre -->
-        <Button
-            android:id="@+id/btnEditar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:background="@android:color/transparent"
-            android:text="@string/profile_editButton"
-            android:textAllCaps="true"
-            android:textColor="@color/menu_icon_gray"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tvInfoPersonal" />
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imgPerfil"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:contentDescription="@string/profile_image_description"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="36dp"
             android:src="@drawable/profile_image"
+            android:contentDescription="@string/profile_image_description"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvInfoPersonal" />
+            app:layout_constraintTop_toBottomOf="@+id/tvPerfilTitulo"
+            app:shapeAppearanceOverlay="@style/CircularImageView" />
+
 
         <TextView
             android:id="@+id/tvNombre"
@@ -107,26 +107,26 @@
             android:id="@+id/tvEmail"
             android:layout_width="365dp"
             android:layout_height="28dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="12dp"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="@string/profile_userEmail"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/grisOscuro"
             app:drawableStartCompat="@drawable/ic_email"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.347"
+            app:layout_constraintHorizontal_bias="0.326"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imgPerfil" />
+            app:layout_constraintTop_toBottomOf="@+id/tvInfoPersonal" />
 
         <TextView
             android:id="@+id/tvTelefono"
             android:layout_width="364dp"
             android:layout_height="29dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="@string/profile_userID"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/grisOscuro"
             app:drawableStartCompat="@drawable/ic_idcard"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.34"
@@ -140,8 +140,9 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="48dp"
             android:text="@string/profile_academicInformation"
-            android:textColor="@color/menu_icon_gray"
-            android:textSize="14sp"
+            android:textColor="@color/grisOscuro"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTelefono" />
 
@@ -163,7 +164,7 @@
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="@string/profile_admissionYear"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/grisOscuro"
             app:drawableStartCompat="@drawable/ic_calendar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvInfoAcademica" />
@@ -177,7 +178,7 @@
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="@string/profile_subjects"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/grisOscuro"
             app:drawableStartCompat="@drawable/ic_book"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvIngreso" />
@@ -191,7 +192,7 @@
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="@string/profile_average"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/grisOscuro"
             app:drawableStartCompat="@drawable/ic_trendingup"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvMaterias" />
@@ -205,7 +206,7 @@
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="@string/profile_academicStatus"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/grisOscuro"
             app:drawableStartCompat="@drawable/ic_graduationcap"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvPromedio" />
@@ -214,8 +215,8 @@
             android:id="@+id/btnCambiarContrasena"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="232dp"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="152dp"
             android:backgroundTint="@color/button"
             android:text="@string/profile_changePassword"
             android:textColor="@color/white"
@@ -225,10 +226,10 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCerrarSesion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="153dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="104dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="@color/button"
             android:text="@string/profile_logout"
             android:textColor="@color/white"

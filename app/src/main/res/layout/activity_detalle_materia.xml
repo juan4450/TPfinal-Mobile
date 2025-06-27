@@ -28,7 +28,7 @@
         <ImageView
             android:id="@+id/btnVolver"
             android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_height="41dp"
             android:layout_marginTop="20dp"
             android:contentDescription="@string/volver"
             android:src="@drawable/ic_back"
@@ -37,22 +37,23 @@
 
         <TextView
             android:id="@+id/tvNombreMateria"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="338dp"
+            android:layout_height="59dp"
             android:layout_margin="16dp"
             android:layout_marginTop="8dp"
             android:text="@string/materia_nombre_demo"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/btnVolver"
-            app:layout_constraintTop_toTopOf="@id/btnVolver" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
         <TextView
             android:id="@+id/tvProfesor"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="353dp"
+            android:layout_height="22dp"
             android:layout_margin="16dp"
             android:text="@string/materia_profesor"
             android:textSize="16sp"
@@ -110,7 +111,7 @@
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:src="@drawable/ic_calendar"
-                        app:tint="@android:color/white" />
+                        app:tint="@color/white" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -186,7 +187,7 @@
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:src="@drawable/ic_star"
-                        app:tint="@android:color/white" />
+                        app:tint="@color/white" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -254,7 +255,7 @@
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:src="@drawable/ic_group"
-                        app:tint="@android:color/white" />
+                        app:tint="@color/white" />
                 </LinearLayout>
 
                 <LinearLayout

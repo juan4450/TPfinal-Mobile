@@ -74,12 +74,13 @@ class DetalleVencimientoActivity : AppCompatActivity(), NavigationView.OnNavigat
         tvEstadoEntrega = findViewById(R.id.tvEstadoEntrega)
 
         val colorResId = when (materia?.nombre) {
-            "Desarrollo de Aplicaciones para Dispositivos Móviles" -> R.color.colorMateria1
+            "App. para dispositivos Móviles" -> R.color.colorMateria1
             "Metodología de Prueba de Sistemas" -> R.color.colorMateria2
-            "Desarrollo de Sistemas de Información Orientados a la Gestión y Apoyo a las Decisiones" -> R.color.colorMateria3
-            "Tecnologías de la Información y Comunicación" -> R.color.colorMateria4
+            "Práctica Profesional II" -> R.color.colorMateria3
+            "Tecnologías de la Información" -> R.color.colorMateria4
             else -> R.color.colorPrimary
         }
+
         btnMarcarCompletado.setBackgroundColor(ContextCompat.getColor(this, colorResId))
 
         btnMarcarCompletado.setOnClickListener {
@@ -112,11 +113,12 @@ class DetalleVencimientoActivity : AppCompatActivity(), NavigationView.OnNavigat
 
     private fun aperturaMock(nombre: String): String {
         return when (nombre) {
-            "Desarrollo de Aplicaciones para Dispositivos Móviles" -> "15 de junio de 2025"
+            "App. para dispositivos Móviles" -> "15 de junio de 2025"
             "Metodología de Prueba de Sistemas" -> "17 de junio de 2025"
-            "Desarrollo de Sistemas de Información Orientados a la Gestión y Apoyo a las Decisiones" -> "20 de junio de 2025"
-            "Tecnologías de la Información y Comunicación" -> "22 de junio de 2025"
+            "Práctica Profesional II" -> "20 de junio de 2025"
+            "Tecnologías de la Información" -> "22 de junio de 2025"
             else -> "Fecha no disponible"
         }
     }
+
 }

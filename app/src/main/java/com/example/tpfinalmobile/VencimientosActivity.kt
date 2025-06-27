@@ -57,7 +57,7 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
 
         val materias = listOf(
             Materia(
-                nombre = "Desarrollo de Aplicaciones para Dispositivos Móviles",
+                nombre = "App. para dispositivos Móviles",
                 vencimiento = "1 de julio de 2025",
                 tp = "TP Integrador Final",
                 nota = 8,
@@ -77,7 +77,7 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
                 apertura = "Lunes 2 de junio de 2025, 00:00hs"
             ),
             Materia(
-                nombre = "Desarrollo de Sistemas de Información Orientados a la Gestión y Apoyo a las Decisiones",
+                nombre = "Práctica Profesional II",
                 vencimiento = "5 de julio de 2025",
                 tp = "TP Entregable",
                 nota = 7,
@@ -87,7 +87,7 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
                 apertura = "Martes 10 de junio de 2025, 00:00hs"
             ),
             Materia(
-                nombre = "Tecnologías de la Información y Comunicación",
+                nombre = "Tecnologías de la Información",
                 vencimiento = "10 de julio de 2025",
                 tp = "TP Parcial",
                 nota = 5,
@@ -97,6 +97,7 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
                 apertura = "Miércoles 5 de junio de 2025, 00:00hs"
             )
         )
+
 
         recyclerVencimientos = findViewById(R.id.recyclerVencimientos)
         recyclerVencimientos.layoutManager = LinearLayoutManager(this)
