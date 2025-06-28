@@ -103,7 +103,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/vencimiento_titulo"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/textButtonColor"
                         android:textSize="17sp"
                         android:textStyle="bold" />
 
@@ -179,7 +179,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/calificaciones_titulo"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/textButtonColor"
                         android:textSize="17sp"
                         android:textStyle="bold" />
 
@@ -247,7 +247,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/presentismo_titulo"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/textButtonColor"
                         android:textSize="17sp"
                         android:textStyle="bold" />
 

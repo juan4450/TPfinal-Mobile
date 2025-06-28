@@ -22,9 +22,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:menu="@menu/activity_home_drawer"
         app:headerLayout="@layout/nav_header_home"
+        app:itemIconTint="@drawable/navigation_icon_color"
         app:itemTextAppearance="@style/MenuTextStyle"
-        app:itemIconTint="@drawable/navigation_icon_color" />
+        app:menu="@menu/activity_home_drawer" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

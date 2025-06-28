@@ -72,12 +72,13 @@
             app:tint="@color/orange_star"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="108dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="Asistencias"
+            android:textColor="@color/grisOscuro"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

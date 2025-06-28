@@ -60,11 +60,11 @@
                     android:id="@+id/txtTitulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
                     android:text="Nombre de la materia"
-                    android:textStyle="bold"
+                    android:textColor="@color/grisOscuro"
                     android:textSize="18sp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:layout_marginBottom="8dp" />
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -107,16 +107,16 @@
                     android:indeterminateTint="@color/colorPrimary"
                     android:max="100"
                     android:progress="88"
-                    android:progressTint="@color/colorMateria1" />
+                    android:progressTint="@color/orange_star" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Parciales"
-                    android:textSize="20sp"
                     android:layout_marginBottom="8dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:text="Parciales"
+                    android:textColor="@color/grisOscuro"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
                 <View
                     android:layout_width="match_parent"
@@ -134,11 +134,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Trabajos Prácticos"
-                    android:textSize="20sp"
                     android:layout_marginBottom="8dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimaryDark"/>
+                    android:text="Trabajos Prácticos"
+                    android:textColor="@color/grisOscuro"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <View
                     android:layout_width="match_parent"

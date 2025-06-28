@@ -71,7 +71,7 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
             btnVerVencimientos.setOnClickListener {
                 val intent = Intent(this, DetalleVencimientoActivity::class.java)
                 intent.putExtra("materia", materia)
-                intent.putExtra("usuario", usuario) // ✅ Pasar el nombre de usuario
+                intent.putExtra("usuario", usuario)
                 startActivity(intent)
             }
 

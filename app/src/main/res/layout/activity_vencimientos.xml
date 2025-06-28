@@ -49,11 +49,11 @@
             android:id="@+id/tvSubtitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/home_user_details"
+            android:layout_marginBottom="8dp"
             android:gravity="center"
-            android:textSize="20sp"
-            android:textColor="@android:color/darker_gray"
-            android:layout_marginBottom="8dp" />
+            android:text="@string/home_user_details"
+            android:textColor="@color/grisOscuro"
+            android:textSize="20sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerVencimientos"

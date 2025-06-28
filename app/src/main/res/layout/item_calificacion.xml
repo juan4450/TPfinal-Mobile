@@ -19,8 +19,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:text="Primer Parcial"
-            android:textSize="18sp"
-            android:textColor="#333333" />
+            android:textColor="@color/grisOscuro"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tvNota"

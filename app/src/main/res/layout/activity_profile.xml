@@ -219,7 +219,7 @@
             android:layout_marginTop="152dp"
             android:backgroundTint="@color/button"
             android:text="@string/profile_changePassword"
-            android:textColor="@color/white"
+            android:textColor="@color/textButtonColor"
             app:cornerRadius="24dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvEstado" />
