@@ -90,4 +90,43 @@
         app:layout_constraintTop_toBottomOf="@id/userAttendance"
         app:layout_constraintStart_toStartOf="@id/userAttendance"
         />
+
+    <LinearLayout
+        android:id="@+id/userScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toBottomOf="@id/recyclerHome"
+        app:layout_constraintStart_toStartOf="@id/recyclerHome">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_star"
+            app:tint="@color/orange_star"/>
+
+        <TextView
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Promedios"
+            android:textColor="@color/grisOscuro"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/userScore"
+        app:layout_constraintStart_toStartOf="@id/userScore"
+        />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

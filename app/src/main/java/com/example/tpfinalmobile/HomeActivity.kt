@@ -50,7 +50,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         userName.text = getString(R.string.home_welcome, usuario)
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerHome)
+        val recyclerViewScore: RecyclerView = findViewById(R.id.recyclerScore)
+
         recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerViewScore.layoutManager = LinearLayoutManager(this)
+
 
         val homeItems = listOf(
             HomeItem("75% App. para dispositivos Móviles", R.drawable.ic_check_green, R.color.grisOscuro, R.drawable.bg_classic_item),
@@ -59,8 +63,18 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             HomeItem("75% Práctica Profesional II", R.drawable.ic_check_green, R.color.grisOscuro,  R.drawable.bg_classic_item),
         )
 
+        val scoreItems = listOf(
+            HomeItem("8.5 App. para dispositivos Móviles", R.drawable.ic_check_green, R.color.grisOscuro, R.drawable.bg_classic_item),
+            HomeItem("9 Metodología Prueba de Sistemas", R.drawable.ic_check_green, R.color.grisOscuro,  R.drawable.bg_classic_item),
+            HomeItem("5.5 Tecnologías de la Información",  R.drawable.ic_error, R.color.error, R.drawable.bg_error_rounded),
+            HomeItem("10 Práctica Profesional II", R.drawable.ic_check_green, R.color.grisOscuro,  R.drawable.bg_classic_item),
+        )
+
         val adapter = HomeAdapter(homeItems)
         recyclerView.adapter = adapter
+
+        val scoreAdapter = HomeAdapter(scoreItems)
+        recyclerViewScore.adapter = scoreAdapter
 
     }
 
