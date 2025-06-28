@@ -32,8 +32,8 @@
 
     <!-- Home -->
     <string name="home_toolbar_title">Inicio</string>
-    <string name="home_welcome">¡Bienvenido/a, %1$s!</string>
-    <string name="home_user_hint">Hola, %1$s! </string>
+    <string name="home_welcome">%1$s</string>
+    <string name="home_user_hint">%1$s! </string>
     <string name="home_user_details">IFTS 18 - Desarrollo de Software</string>
     <string name="home_user_default">Estudiante</string>
     <string name="home_progress_title">Progreso académico</string>

@@ -41,7 +41,8 @@
         android:layout_marginStart="16dp"
         app:layout_constraintTop_toTopOf="@id/profileImage"
         app:layout_constraintStart_toEndOf="@id/profileImage"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/userDetails"
@@ -53,107 +54,39 @@
         app:layout_constraintStart_toStartOf="@id/userName"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/tvProgressTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:layout_marginStart="16dp"
-        android:text="@string/home_progress_title"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userDetails" />
-
     <LinearLayout
-        android:id="@+id/llProgressContainer"
-        android:layout_width="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/userAttendance"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvProgressTitle">
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toBottomOf="@id/userDetails"
+        app:layout_constraintStart_toStartOf="@id/userDetails">
 
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_person_check"
+            app:tint="@color/orange_star"/>
 
-        <include layout="@layout/view_progress_item"
-            android:id="@+id/itemCuatrimestre" />
-
-        <include layout="@layout/view_progress_item"
-            android:id="@+id/itemPromedio" />
-
-        <include layout="@layout/view_progress_item"
-            android:id="@+id/itemAsistencia" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Asistencias"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
     </LinearLayout>
 
-
-    <!-- Botones con Material Components -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnMaterias"
-        android:layout_width="0dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerHome"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="@string/home_btn_materias"
-        android:padding="15dp"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:cornerRadius="12dp"
-        app:layout_constraintTop_toBottomOf="@id/userDetails" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnCronograma"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="@string/home_btn_cronograma"
-        android:padding="15dp"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:cornerRadius="12dp"
-        app:layout_constraintTop_toBottomOf="@id/btnMaterias" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnVencimientos"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="@string/home_btn_vencimientos"
-        android:padding="15dp"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:cornerRadius="12dp"
-        app:layout_constraintTop_toBottomOf="@id/btnCronograma" />
-
-    <!-- Footer -->
-    <TextView
-        android:id="@+id/footer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/home_footer"
-        android:textSize="12sp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
+        android:layout_margin="16dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/userAttendance"
+        app:layout_constraintStart_toStartOf="@id/userAttendance"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
-

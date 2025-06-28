@@ -1,5 +1,6 @@
 package com.example.tpfinalmobile
 
+import HomeAdapter
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
@@ -11,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -48,35 +51,20 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val userName = findViewById<TextView>(R.id.userName)
         userName.text = getString(R.string.home_welcome, usuario)
 
-        findViewById<Button>(R.id.btnMaterias).setOnClickListener {
-            startActivity(Intent(this, MateriasActivity::class.java).putExtra("usuario", usuario))
-        }
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerHome)
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
-        findViewById<Button>(R.id.btnCronograma).setOnClickListener {
-            startActivity(Intent(this, CronogramaActivity::class.java).putExtra("usuario", usuario))
-        }
-
-        findViewById<Button>(R.id.btnVencimientos).setOnClickListener {
-            startActivity(Intent(this, VencimientosActivity::class.java).putExtra("usuario", usuario))
-        }
-
-        val itemCuatrimestre = findViewById<LinearLayout>(R.id.itemCuatrimestre)
-    val itemPromedio = findViewById<LinearLayout>(R.id.itemPromedio)
-    val itemAsistencia = findViewById<LinearLayout>(R.id.itemAsistencia)
-
-    fun setupProgressItem(container: LinearLayout, progress: Int, label: String) {
-        val indicator = container.findViewById<com.google.android.material.progressindicator.CircularProgressIndicator>(
-            R.id.cpiValue
+        val homeItems = listOf(
+            HomeItem("75% App. para dispositivos Móviles", R.drawable.ic_check_green, R.color.grisOscuro, R.drawable.bg_classic_item),
+            HomeItem("80% Metodología Prueba de Sistemas", R.drawable.ic_check_green, R.color.grisOscuro,  R.drawable.bg_classic_item),
+            HomeItem("65% Tecnologías de la Información", R.drawable.ic_error, R.color.error, R.drawable.bg_error_rounded),
+            HomeItem("75% Práctica Profesional II", R.drawable.ic_check_green, R.color.grisOscuro,  R.drawable.bg_classic_item),
         )
-        val tvLabel   = container.findViewById<TextView>(R.id.tvLabel)
-        indicator.setProgressCompat(progress, true)
-        tvLabel.text = label
-    }
 
-    setupProgressItem(itemCuatrimestre,    90, getString(R.string.progress_cuatrimestre, 90))
-    setupProgressItem(itemPromedio,    88, getString(R.string.progress_promedio, 88))
-    setupProgressItem(itemAsistencia, 75, getString(R.string.progress_asistencia, 75))
-}
+        val adapter = HomeAdapter(homeItems)
+        recyclerView.adapter = adapter
+
+    }
 
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
