@@ -34,7 +34,5 @@
     <color name="warning">#FF9800</color>
     <color name="danger">#F44336</color>
     <color name="icon_orange">#FF6301</color>
-
-
-
+    <color name="yellow">#FFEB3B</color>
 </resources>
