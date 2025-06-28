@@ -1,5 +1,6 @@
 package com.example.tpfinalmobile
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
@@ -23,6 +24,7 @@ class CalificacionActivity : AppCompatActivity(), NavigationView.OnNavigationIte
     private lateinit var toolbar: Toolbar
     private lateinit var btnVolver: ImageView
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calificacion)

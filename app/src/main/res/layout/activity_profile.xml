@@ -224,18 +224,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvEstado" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnCerrarSesion"
-            android:layout_width="153dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="104dp"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/button"
-            android:text="@string/profile_logout"
-            android:textColor="@color/white"
-            app:cornerRadius="24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnCambiarContrasena" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

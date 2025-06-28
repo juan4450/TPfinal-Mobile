@@ -1,5 +1,6 @@
 package com.example.tpfinalmobile
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
@@ -24,6 +25,7 @@ class DetalleVencimientoActivity : AppCompatActivity(), NavigationView.OnNavigat
 
     private var estadoEntregado = false
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalle_vencimiento)

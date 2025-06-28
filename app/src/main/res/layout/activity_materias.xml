@@ -36,7 +36,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="14dp"
+                android:layout_marginStart="6dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@android:color/transparent"
@@ -47,7 +47,7 @@
                 android:id="@+id/tvTitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="9dp"
+                android:layout_marginStart="6dp"
                 android:layout_toEndOf="@+id/btnVolver"
                 android:text="@string/materias_titulo"
                 android:textColor="@color/colorPrimary"
@@ -57,13 +57,13 @@
 
         <TextView
             android:id="@+id/tvSubtitulo"
-            android:layout_width="match_parent"
+            android:layout_width="393dp"
             android:layout_height="wrap_content"
-            android:text="@string/materias_subtitulo"
+            android:layout_marginBottom="8dp"
             android:gravity="center"
+            android:text="@string/materias_subtitulo"
             android:textColor="@color/textSecondary"
-            android:textSize="20sp"
-            android:layout_marginBottom="8dp" />
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"

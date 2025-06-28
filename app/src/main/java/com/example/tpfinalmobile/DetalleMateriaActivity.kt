@@ -1,5 +1,6 @@
 package com.example.tpfinalmobile
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
@@ -25,6 +26,7 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
     private lateinit var cardPresentismo: MaterialCardView
 
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalle_materia)

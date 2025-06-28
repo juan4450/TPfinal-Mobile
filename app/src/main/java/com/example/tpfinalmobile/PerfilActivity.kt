@@ -20,7 +20,7 @@ class PerfilActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     private lateinit var navigationView: NavigationView
     private lateinit var toolbar: Toolbar
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
@@ -57,12 +57,6 @@ class PerfilActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             Toast.makeText(this, "Funcionalidad en desarrollo", Toast.LENGTH_SHORT).show()
         }
 
-        findViewById<MaterialButton>(R.id.btnCerrarSesion).setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intent)
-            finish()
-        }
 
         // Datos académicos con texto combinado (como el mock)
         val tvIngreso = findViewById<TextView>(R.id.tvIngreso)

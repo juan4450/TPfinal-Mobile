@@ -128,21 +128,16 @@
     <string name="asistencia_fecha">Fecha</string>
     <string name="asistencia">Asistencia</string>
 
+    <!-- Información adicional -->
     <string name="materia_obligatoria">Materia obligatoria</string>
     <string name="materia_obligatoria_texto">Este icono indica que la aprobación de la materia es condición obligatoria para avanzar en el plan de estudios</string>
-
     <string name="proximos_vencimientos">Próximos Vencimientos</string>
     <string name="marcar_como_completa">Marcar como completa</string>
-
-    <string name="asistencias">Asistencias</string>
     <string name="promedios">Promedios</string>
     <string name="cronograma">Cronograma</string>
-    <string name="bajo_desempeno">Bajo</string>
-    <string name="medio_desempeno">Medio</string>
-    <string name="alto_desempeno">Alto</string>
-    <string name="asistencia_icono">🕓</string>
-    <string name="promedio_icono">⭐</string>
-
 
 </resources>
+
+
+
 
