@@ -46,9 +46,6 @@ class DetalleVencimientoActivity : AppCompatActivity(), NavigationView.OnNavigat
         toggle.syncState()
         toggle.drawerArrowDrawable.color = getColor(R.color.menu_icon_gray)
 
-        val usuario = intent.getStringExtra("usuario") ?: "Usuario"
-        actualizarNavHeader(navigationView, usuario)
-
         btnVolver = findViewById(R.id.btnVolver)
         btnVolver.setOnClickListener {
             finish()
@@ -104,7 +101,6 @@ class DetalleVencimientoActivity : AppCompatActivity(), NavigationView.OnNavigat
             R.id.nav_perfil -> startActivity(Intent(this, PerfilActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_home -> startActivity(Intent(this, HomeActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_materias -> startActivity(Intent(this, MateriasActivity::class.java).putExtra("usuario", usuario))
-            R.id.nav_cronograma -> startActivity(Intent(this, CronogramaActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_vencimientos -> startActivity(Intent(this, VencimientosActivity::class.java).putExtra("usuario", usuario))
         }
         drawerLayout.closeDrawer(GravityCompat.START)

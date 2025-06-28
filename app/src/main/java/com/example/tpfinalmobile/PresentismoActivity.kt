@@ -39,9 +39,6 @@ class PresentismoActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        val usuario = intent.getStringExtra("usuario") ?: "Usuario"
-        actualizarNavHeader(navigationView, usuario)
-
         if (savedInstanceState == null) {
             val materia = intent.getStringExtra("materia") ?: "Sin nombre"
             val presentismo = intent.getIntExtra("presentismo", 0)
@@ -53,11 +50,9 @@ class PresentismoActivity : AppCompatActivity(), NavigationView.OnNavigationItem
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        val usuario = intent.getStringExtra("usuario") ?: "Usuario"
         when (item.itemId) {
             R.id.nav_home -> startActivity(Intent(this, HomeActivity::class.java))
             R.id.nav_materias -> startActivity(Intent(this, MateriasActivity::class.java))
-            R.id.nav_cronograma -> startActivity(Intent(this, CronogramaActivity::class.java))
             R.id.nav_vencimientos -> startActivity(Intent(this, VencimientosActivity::class.java))
             R.id.nav_perfil -> startActivity(Intent(this, PerfilActivity::class.java))
         }

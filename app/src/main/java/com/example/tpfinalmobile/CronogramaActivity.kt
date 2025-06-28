@@ -40,9 +40,6 @@ class CronogramaActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        val usuario = intent.getStringExtra("usuario") ?: "Usuario"
-        actualizarNavHeader(navigationView, usuario)
-
         val cronograma = listOf(
             CronogramaItem("Lunes", "18:00 a 22:00 hs", "Desarrollo de Aplicaciones para Dispositivos Móviles"),
             CronogramaItem("Martes", "18:00 a 22:00 hs", "Metodología de Prueba de Sistemas"),
@@ -70,7 +67,6 @@ class CronogramaActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
             R.id.nav_perfil -> startActivity(Intent(this, PerfilActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_home -> startActivity(Intent(this, HomeActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_materias -> startActivity(Intent(this, MateriasActivity::class.java).putExtra("usuario", usuario))
-            R.id.nav_cronograma -> { /* ya estás aquí */ }
             R.id.nav_vencimientos -> startActivity(Intent(this, VencimientosActivity::class.java).putExtra("usuario", usuario))
         }
 

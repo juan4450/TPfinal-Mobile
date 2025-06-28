@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/nav_perfil" android:title="Mi Perfil" />
-    <item android:id="@+id/nav_home" android:title="Inicio" />
-    <item android:id="@+id/nav_materias" android:title="Materias" />
-    <item android:id="@+id/nav_cronograma" android:title="Cronograma" />
-    <item android:id="@+id/nav_vencimientos" android:title="Vencimientos" />
-    <item android:id="@+id/nav_logout" android:title="Cerrar sesión"/>
+
+    <!-- Ítems del menú -->
+    <group android:checkableBehavior="single">
+    <item android:id="@+id/nav_perfil"
+        android:icon="@drawable/ic_person"
+        android:title="Mi Perfil" />
+
+    <item android:id="@+id/nav_home"
+        android:icon="@drawable/ic_notification"
+        android:title="Inicio" />
+
+    <item android:id="@+id/nav_vencimientos"
+        android:icon="@drawable/ic_schedule"
+        android:title="Próximos Vencimientos" />
+
+    <item android:id="@+id/nav_materias"
+        android:icon="@drawable/ic_book"
+        android:title="Materias en curso" />
+
+
+    <item android:id="@+id/nav_acerca"
+        android:icon="@drawable/ic_graduationcap"
+        android:title="Acerca de Track - Edu" />
+    </group>
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Cerrar sesión" />
 </menu>

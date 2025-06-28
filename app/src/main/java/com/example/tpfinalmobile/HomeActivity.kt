@@ -44,7 +44,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         val usuario = intent.getStringExtra("usuario") ?: "Usuario"
-        actualizarNavHeader(navigationView, usuario)
 
         val userName = findViewById<TextView>(R.id.userName)
         userName.text = getString(R.string.home_welcome, usuario)
@@ -62,22 +61,22 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         val itemCuatrimestre = findViewById<LinearLayout>(R.id.itemCuatrimestre)
-        val itemPromedio = findViewById<LinearLayout>(R.id.itemPromedio)
-        val itemAsistencia = findViewById<LinearLayout>(R.id.itemAsistencia)
+    val itemPromedio = findViewById<LinearLayout>(R.id.itemPromedio)
+    val itemAsistencia = findViewById<LinearLayout>(R.id.itemAsistencia)
 
-        fun setupProgressItem(container: LinearLayout, progress: Int, label: String) {
-            val indicator = container.findViewById<com.google.android.material.progressindicator.CircularProgressIndicator>(
-                R.id.cpiValue
-            )
-            val tvLabel   = container.findViewById<TextView>(R.id.tvLabel)
-            indicator.setProgressCompat(progress, true)
-            tvLabel.text = label
-        }
-
-        setupProgressItem(itemCuatrimestre,    90, getString(R.string.progress_cuatrimestre, 90))
-        setupProgressItem(itemPromedio,    88, getString(R.string.progress_promedio, 88))
-        setupProgressItem(itemAsistencia, 75, getString(R.string.progress_asistencia, 75))
+    fun setupProgressItem(container: LinearLayout, progress: Int, label: String) {
+        val indicator = container.findViewById<com.google.android.material.progressindicator.CircularProgressIndicator>(
+            R.id.cpiValue
+        )
+        val tvLabel   = container.findViewById<TextView>(R.id.tvLabel)
+        indicator.setProgressCompat(progress, true)
+        tvLabel.text = label
     }
+
+    setupProgressItem(itemCuatrimestre,    90, getString(R.string.progress_cuatrimestre, 90))
+    setupProgressItem(itemPromedio,    88, getString(R.string.progress_promedio, 88))
+    setupProgressItem(itemAsistencia, 75, getString(R.string.progress_asistencia, 75))
+}
 
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -99,9 +98,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.nav_materias -> {
                 startActivity(Intent(this, MateriasActivity::class.java).putExtra("usuario", usuario))
-            }
-            R.id.nav_cronograma -> {
-                startActivity(Intent(this, CronogramaActivity::class.java).putExtra("usuario", usuario))
             }
             R.id.nav_vencimientos -> {
                 startActivity(Intent(this, VencimientosActivity::class.java).putExtra("usuario", usuario))

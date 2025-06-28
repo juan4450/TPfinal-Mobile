@@ -51,12 +51,6 @@ class CalificacionActivity : AppCompatActivity(), NavigationView.OnNavigationIte
             finish()
         }
 
-        // Header con nombre de usuario
-        val usuario = intent.getStringExtra("usuario") ?: "Estudiante"
-        val headerView = navigationView.getHeaderView(0)
-        headerView.findViewById<TextView>(R.id.headerName).text =
-            getString(R.string.home_welcome, usuario)
-
         // Obtener materia
         val materia = intent.getSerializableExtra("materia") as? Materia
 
@@ -109,7 +103,6 @@ class CalificacionActivity : AppCompatActivity(), NavigationView.OnNavigationIte
             R.id.nav_perfil -> startActivity(Intent(this, PerfilActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_home -> startActivity(Intent(this, HomeActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_materias -> startActivity(Intent(this, MateriasActivity::class.java).putExtra("usuario", usuario))
-            R.id.nav_cronograma -> startActivity(Intent(this, CronogramaActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_vencimientos -> startActivity(Intent(this, VencimientosActivity::class.java).putExtra("usuario", usuario))
         }
 

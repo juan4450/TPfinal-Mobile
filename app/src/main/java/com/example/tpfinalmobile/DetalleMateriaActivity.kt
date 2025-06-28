@@ -47,7 +47,6 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
         toggle.syncState()
 
         val usuario = intent.getStringExtra("usuario") ?: "Usuario"
-        actualizarNavHeader(navigationView, usuario)
 
         btnVolver = findViewById(R.id.btnVolver)
         btnVolver.setOnClickListener {
@@ -123,7 +122,6 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
             R.id.nav_perfil -> startActivity(Intent(this, PerfilActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_home -> startActivity(Intent(this, HomeActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_materias -> startActivity(Intent(this, MateriasActivity::class.java).putExtra("usuario", usuario))
-            R.id.nav_cronograma -> startActivity(Intent(this, CronogramaActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_vencimientos -> startActivity(Intent(this, VencimientosActivity::class.java).putExtra("usuario", usuario))
         }
 

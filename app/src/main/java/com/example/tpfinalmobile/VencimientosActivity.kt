@@ -34,7 +34,6 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
         drawerLayout = findViewById(R.id.drawer_layout)
         navigationView = findViewById(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
-        actualizarNavHeader(navigationView, usuario)
 
         val toggle = ActionBarDrawerToggle(
             this,
@@ -132,13 +131,6 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
                 Intent(
                     this,
                     MateriasActivity::class.java
-                ).putExtra("usuario", usuario)
-            )
-
-            R.id.nav_cronograma -> startActivity(
-                Intent(
-                    this,
-                    CronogramaActivity::class.java
                 ).putExtra("usuario", usuario)
             )
 

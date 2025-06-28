@@ -94,9 +94,6 @@ class PerfilActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             R.id.nav_materias -> {
                 startActivity(Intent(this, MateriasActivity::class.java).putExtra("usuario", usuario))
             }
-            R.id.nav_cronograma -> {
-                startActivity(Intent(this, CronogramaActivity::class.java).putExtra("usuario", usuario))
-            }
             R.id.nav_vencimientos -> {
                 startActivity(Intent(this, VencimientosActivity::class.java).putExtra("usuario", usuario))
             }
