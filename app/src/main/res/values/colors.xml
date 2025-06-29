@@ -35,4 +35,6 @@
     <color name="danger">#F44336</color>
     <color name="icon_orange">#FF6301</color>
     <color name="yellow">#FFEB3B</color>
+    <color name="home_items">#f0ecec</color>
+    <color name="home_items_text">#373737</color>
 </resources>

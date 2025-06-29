@@ -59,17 +59,17 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
         val homeItems = listOf(
-            HomeItem("75% App. para dispositivos Móviles", R.drawable.ic_check_green, R.color.black, R.drawable.bg_classic_item),
-            HomeItem("80% Metodología Prueba de Sistemas", R.drawable.ic_check_green, R.color.black,  R.drawable.bg_classic_item),
+            HomeItem("75% App. para dispositivos Móviles", R.drawable.ic_check_green, R.color.home_items_text, R.drawable.bg_classic_item),
+            HomeItem("80% Metodología Prueba de Sistemas", R.drawable.ic_check_green, R.color.home_items_text,  R.drawable.bg_classic_item),
             HomeItem("65% Tecnologías de la Información", R.drawable.ic_error, R.color.error, R.drawable.bg_error_rounded),
-            HomeItem("75% Práctica Profesional II", R.drawable.ic_check_green, R.color.black,  R.drawable.bg_classic_item),
+            HomeItem("75% Práctica Profesional II", R.drawable.ic_check_green, R.color.home_items_text,  R.drawable.bg_classic_item),
         )
 
         val scoreItems = listOf(
-            HomeItem("8.5 App. para dispositivos Móviles", R.drawable.ic_check_green, R.color.black, R.drawable.bg_classic_item),
-            HomeItem("9 Metodología Prueba de Sistemas", R.drawable.ic_check_green, R.color.black,  R.drawable.bg_classic_item),
+            HomeItem("8.5 App. para dispositivos Móviles", R.drawable.ic_check_green, R.color.home_items_text, R.drawable.bg_classic_item),
+            HomeItem("9 Metodología Prueba de Sistemas", R.drawable.ic_check_green, R.color.home_items_text,  R.drawable.bg_classic_item),
             HomeItem("5.5 Tecnologías de la Información",  R.drawable.ic_error, R.color.error, R.drawable.bg_error_rounded),
-            HomeItem("10 Práctica Profesional II", R.drawable.ic_check_green, R.color.black,  R.drawable.bg_classic_item),
+            HomeItem("10 Práctica Profesional II", R.drawable.ic_check_green, R.color.home_items_text,  R.drawable.bg_classic_item),
         )
 
         val cronogramaItems = listOf(
