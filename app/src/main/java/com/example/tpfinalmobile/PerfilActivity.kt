@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -68,6 +69,11 @@ class PerfilActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         tvMaterias.text = getString(R.string.profile_subjects_label) + " 13/23"
         tvPromedio.text = getString(R.string.profile_average_label) + " 8.7"
         tvEstado.text = getString(R.string.profile_academicStatus_label) + " Regular"
+
+        val btnVolver: ImageView = findViewById(R.id.btnVolver)
+        btnVolver.setOnClickListener {
+            finish()
+        }
     }
 
     override fun onBackPressed() {
