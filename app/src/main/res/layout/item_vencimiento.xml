@@ -14,52 +14,68 @@
         android:orientation="vertical">
 
         <!-- HEADER de color -->
-        <View
+        <LinearLayout
             android:id="@+id/headerVencimiento"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:background="@color/colorPrimary" />
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvNombreMateria"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Asignatura"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+               />
+        </LinearLayout>
+
 
         <!-- Contenido -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp"
+            >
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginBottom="4dp">
 
                 <TextView
-                    android:id="@+id/tvNombreMateria"
-                    android:layout_width="1dp"
+                    android:id="@+id/tvTp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Asignatura"
-                    android:textColor="@color/textButtonColor"
+                    android:text="TP Final"
+                    android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
                 <TextView
                     android:id="@+id/tvFecha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Próximo vencimiento"
-                    android:textColor="@color/textButtonColor"
+                    android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvTp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvTp" />
 
-            <TextView
-                android:id="@+id/tvTp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TP Final"
-                android:textColor="@color/grisOscuro"
-                android:textSize="16sp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -57,7 +57,7 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
         val materias = listOf(
             Materia(
                 nombre = "App. para dispositivos Móviles",
-                vencimiento = "1 de julio de 2025",
+                vencimiento = "01/07",
                 tp = "TP Integrador Final",
                 nota = 8,
                 presentismo = 80,
@@ -67,7 +67,7 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
             ),
             Materia(
                 nombre = "Metodología de Prueba de Sistemas",
-                vencimiento = "3 de julio de 2025",
+                vencimiento = "03/07",
                 tp = "TP Final",
                 nota = 6,
                 presentismo = 75,
@@ -77,7 +77,7 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
             ),
             Materia(
                 nombre = "Práctica Profesional II",
-                vencimiento = "5 de julio de 2025",
+                vencimiento = "05/07",
                 tp = "TP Entregable",
                 nota = 7,
                 presentismo = 88,
@@ -87,7 +87,7 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
             ),
             Materia(
                 nombre = "Tecnologías de la Información",
-                vencimiento = "10 de julio de 2025",
+                vencimiento = "10/07",
                 tp = "TP Parcial",
                 nota = 5,
                 presentismo = 92,
