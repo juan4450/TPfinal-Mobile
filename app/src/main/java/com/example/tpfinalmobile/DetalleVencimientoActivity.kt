@@ -104,6 +104,7 @@ class DetalleVencimientoActivity : AppCompatActivity(), NavigationView.OnNavigat
             R.id.nav_home -> startActivity(Intent(this, HomeActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_materias -> startActivity(Intent(this, MateriasActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_vencimientos -> startActivity(Intent(this, VencimientosActivity::class.java).putExtra("usuario", usuario))
+            R.id.nav_acerca -> startActivity(Intent(this, AcercaActivity::class.java))
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

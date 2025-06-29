@@ -3,6 +3,7 @@ package com.example.tpfinalmobile
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.ImageView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -10,7 +11,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
-class PresentismoActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class AcercaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
@@ -18,7 +19,7 @@ class PresentismoActivity : AppCompatActivity(), NavigationView.OnNavigationItem
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_presentismo)
+        setContentView(R.layout.activity_acerca)
 
         // Toolbar
         toolbar = findViewById(R.id.toolbar)
@@ -39,13 +40,9 @@ class PresentismoActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        if (savedInstanceState == null) {
-            val materia = intent.getStringExtra("materia") ?: "Sin nombre"
-            val presentismo = intent.getIntExtra("presentismo", 0)
-            val fragment = PresentismoFragment.newInstance(materia, presentismo)
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, fragment)
-                .commit()
+        val btnVolver: ImageView = findViewById(R.id.btnVolver)
+        btnVolver.setOnClickListener {
+            finish()
         }
     }
 
@@ -55,7 +52,7 @@ class PresentismoActivity : AppCompatActivity(), NavigationView.OnNavigationItem
             R.id.nav_materias -> startActivity(Intent(this, MateriasActivity::class.java))
             R.id.nav_vencimientos -> startActivity(Intent(this, VencimientosActivity::class.java))
             R.id.nav_perfil -> startActivity(Intent(this, PerfilActivity::class.java))
-            R.id.nav_acerca -> startActivity(Intent(this, AcercaActivity::class.java))
+            R.id.nav_acerca -> {/* Ya estás aquí */}
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

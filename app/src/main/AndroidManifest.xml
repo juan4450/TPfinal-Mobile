@@ -21,6 +21,7 @@
         <activity android:name=".CalificacionActivity" android:exported="false"/>
         <activity android:name=".DetalleVencimientoActivity" />
         <activity android:name=".PresentismoActivity" android:exported="false" />
+        <activity android:name=".AcercaActivity" android:exported="false"/>
 
         <activity
             android:name=".HomeActivity"

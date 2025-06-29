@@ -94,6 +94,7 @@ class PerfilActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             R.id.nav_perfil -> {
                 // Ya estás en Perfil
             }
+            R.id.nav_acerca -> startActivity(Intent(this, AcercaActivity::class.java))
         }
 
         drawerLayout.closeDrawer(GravityCompat.START)

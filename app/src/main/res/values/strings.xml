@@ -128,6 +128,23 @@
     <string name="asistencia_fecha">Fecha</string>
     <string name="asistencia">Asistencia</string>
 
+    <!-- Acerca De -->
+    <!-- Acerca de Track-Edu -->
+    <string name="acerca_titulo">Acerca de Track-Edu</string>
+    <string name="acerca_nombre_version">Track-Edu (2025) - Versión 1.0</string>
+    <string name="acerca_nombre_version_titulo">Nombre y versión</string>
+
+    <string name="acerca_proposito_titulo">Propósito</string>
+    <string name="acerca_proposito">Aplicación académica desarrollada con el <b>objetivo</b> de permitir que estudiantes visualicen su rendimiento académico de forma centralizada: calificaciones, vencimientos de trabajos prácticos, cronograma de cursada y asistencias.</string>
+
+    <string name="acerca_institucion_titulo">Institución</string>
+    <string name="acerca_institucion"><b>IFTS 18</b> - Tecnicatura Superior en Desarrollo de Software</string>
+    <string name="acerca_materia"><b>Materia:</b> Desarrollo de Aplicaciones para Dispositivos Móviles</string>
+    <string name="acerca_docente"><b>Docente:</b> Prof. Alejandro Peña</string>
+
+    <string name="acerca_equipo_titulo">Equipo de desarrollo</string>
+    <string name="acerca_equipo">Juan García\nLuján Maccari\nLudmila Brizuela</string>
+    
     <!-- Información adicional -->
     <string name="materia_obligatoria">Materia obligatoria</string>
     <string name="materia_obligatoria_texto">Este icono indica que la aprobación de la materia es condición obligatoria para avanzar en el plan de estudios</string>

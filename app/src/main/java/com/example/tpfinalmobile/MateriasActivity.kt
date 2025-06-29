@@ -115,6 +115,7 @@ class MateriasActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
             R.id.nav_materias -> { /* Ya estás en esta pantalla */ }
             R.id.nav_vencimientos -> startActivity(Intent(this, VencimientosActivity::class.java).putExtra("usuario", usuario))
             R.id.nav_perfil -> startActivity(Intent(this, PerfilActivity::class.java).putExtra("usuario", usuario))
+            R.id.nav_acerca -> startActivity(Intent(this, AcercaActivity::class.java))
         }
 
         drawerLayout.closeDrawer(GravityCompat.START)

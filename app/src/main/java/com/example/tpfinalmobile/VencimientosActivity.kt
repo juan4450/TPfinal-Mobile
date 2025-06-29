@@ -136,6 +136,8 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
 
             R.id.nav_vencimientos -> { /* Ya estás aquí */
             }
+
+            R.id.nav_acerca -> startActivity(Intent(this, AcercaActivity::class.java))
         }
 
         drawerLayout.closeDrawer(GravityCompat.START)
