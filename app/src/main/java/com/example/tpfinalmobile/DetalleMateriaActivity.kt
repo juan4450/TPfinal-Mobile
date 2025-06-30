@@ -15,11 +15,8 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.navigation.NavigationView
 
-class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class DetalleMateriaActivity : BaseActivity() {
 
-    private lateinit var drawerLayout: DrawerLayout
-    private lateinit var navigationView: NavigationView
-    private lateinit var toolbar: Toolbar
     private lateinit var btnVolver: ImageView
     private lateinit var btnVerVencimientos: TextView
     private lateinit var cardCalificaciones: MaterialCardView
@@ -31,22 +28,14 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalle_materia)
 
-        toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
-
-        drawerLayout = findViewById(R.id.drawer_layout)
-        navigationView = findViewById(R.id.nav_view)
-        navigationView.setNavigationItemSelectedListener(this)
-
-        val toggle = ActionBarDrawerToggle(
-            this, drawerLayout, toolbar,
-            R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close
+        // Toolbar + menú
+        drawerLayout = ToolbarDrawerHelper.setup(
+            this,
+            toolbarId = R.id.toolbar,
+            drawerLayoutId = R.id.drawer_layout,
+            navViewId = R.id.nav_view,
+            listener = this
         )
-        toggle.drawerArrowDrawable.color = getColor(R.color.menu_icon_gray)
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
 
         val usuario = intent.getStringExtra("usuario") ?: "Usuario"
 
@@ -117,20 +106,6 @@ class DetalleMateriaActivity : AppCompatActivity(), NavigationView.OnNavigationI
         }
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        val usuario = intent.getStringExtra("usuario") ?: "Usuario"
-
-        when (item.itemId) {
-            R.id.nav_perfil -> startActivity(Intent(this, PerfilActivity::class.java).putExtra("usuario", usuario))
-            R.id.nav_home -> startActivity(Intent(this, HomeActivity::class.java).putExtra("usuario", usuario))
-            R.id.nav_materias -> startActivity(Intent(this, MateriasActivity::class.java).putExtra("usuario", usuario))
-            R.id.nav_vencimientos -> startActivity(Intent(this, VencimientosActivity::class.java).putExtra("usuario", usuario))
-            R.id.nav_acerca -> startActivity(Intent(this, AcercaActivity::class.java))
-        }
-
-        drawerLayout.closeDrawer(GravityCompat.START)
-        return true
-    }
 
     private fun estadoNota(nota: Int): String {
         return when {

@@ -15,11 +15,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
 
-class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class VencimientosActivity : BaseActivity() {
 
-    private lateinit var drawerLayout: DrawerLayout
-    private lateinit var navigationView: NavigationView
-    private lateinit var toolbar: Toolbar
     private lateinit var recyclerVencimientos: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,24 +24,14 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
         setContentView(R.layout.activity_vencimientos)
         val usuario = intent.getStringExtra("usuario") ?: "Usuario"
 
-        toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
-
-        drawerLayout = findViewById(R.id.drawer_layout)
-        navigationView = findViewById(R.id.nav_view)
-        navigationView.setNavigationItemSelectedListener(this)
-
-        val toggle = ActionBarDrawerToggle(
+        // Toolbar + menú
+        drawerLayout = ToolbarDrawerHelper.setup(
             this,
-            drawerLayout,
-            toolbar,
-            R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close
+            toolbarId = R.id.toolbar,
+            drawerLayoutId = R.id.drawer_layout,
+            navViewId = R.id.nav_view,
+            listener = this
         )
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-        toggle.drawerArrowDrawable.color = ContextCompat.getColor(this, android.R.color.darker_gray)
 
         val btnVolver: ImageView = findViewById(R.id.btnVolver)
         btnVolver.setOnClickListener {
@@ -107,40 +94,5 @@ class VencimientosActivity : AppCompatActivity(), NavigationView.OnNavigationIte
             startActivity(intent)
         }
 
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        val usuario = intent.getStringExtra("usuario") ?: "Usuario"
-
-        when (item.itemId) {
-            R.id.nav_perfil -> startActivity(
-                Intent(
-                    this,
-                    PerfilActivity::class.java
-                ).putExtra("usuario", usuario)
-            )
-
-            R.id.nav_home -> startActivity(
-                Intent(
-                    this,
-                    HomeActivity::class.java
-                ).putExtra("usuario", usuario)
-            )
-
-            R.id.nav_materias -> startActivity(
-                Intent(
-                    this,
-                    MateriasActivity::class.java
-                ).putExtra("usuario", usuario)
-            )
-
-            R.id.nav_vencimientos -> { /* Ya estás aquí */
-            }
-
-            R.id.nav_acerca -> startActivity(Intent(this, AcercaActivity::class.java))
-        }
-
-        drawerLayout.closeDrawer(GravityCompat.START)
-        return true
     }
 }
