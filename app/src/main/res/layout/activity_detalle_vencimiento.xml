@@ -51,28 +51,28 @@
 
         <TextView
             android:id="@+id/tvTituloMateria"
-            android:layout_width="359dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="367dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="8dp"
             android:text="@string/nombre_materia_demo"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp"
+            android:textColor="@color/grisOscuro"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.545"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar_title" />
-
 
         <TextView
             android:id="@+id/tvTpDetalle"
             android:layout_width="292dp"
             android:layout_height="29dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="36dp"
             android:text="@string/vencimiento_tp"
-            android:textColor="@color/grisOscuro"
-            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@id/ivDescargar"
-            app:layout_constraintHorizontal_bias="0.481"
+            app:layout_constraintHorizontal_bias="0.48"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTituloMateria" />
 
@@ -102,10 +102,11 @@
             android:layout_height="37dp"
             android:layout_marginTop="24dp"
             android:text="@string/vencimiento_apertura"
-            android:textColor="@color/grisOscuro"
-            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.571"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ivDescargar" />
 
@@ -115,10 +116,11 @@
             android:layout_height="38dp"
             android:layout_marginTop="8dp"
             android:text="@string/vencimiento_cierre"
-            android:textColor="@color/grisOscuro"
-            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.558"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvApertura" />
 
@@ -129,9 +131,10 @@
             android:layout_marginTop="12dp"
             android:text="@string/vencimiento_estado"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.571"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvCierre" />
 

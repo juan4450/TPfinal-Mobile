@@ -21,7 +21,7 @@
     <color name="colorMateria2">#f9aa5e</color>
     <color name="colorMateria3">#f9aa5e</color>
     <color name="colorMateria4">#f9aa5e</color>
-    <color name="textButtonColor">#0c0c3b</color>
+    <color name="textButtonColor">#FFFFFF</color>
     <color name="header_color_default">#0D1B54</color>
     <color name="progressBar">#FF6301</color>
     <color name="colorGreen">#009688</color>

@@ -19,7 +19,6 @@
             android:gravity="center_vertical"
             android:layout_marginBottom="12dp">
 
-            <!-- Botón volver -->
             <ImageView
                 android:id="@+id/btnVolver"
                 android:layout_width="24dp"
@@ -28,7 +27,6 @@
                 android:contentDescription="@string/volver"
                 android:layout_marginEnd="12dp" />
 
-            <!-- Título -->
             <TextView
                 android:id="@+id/tvTitulo"
                 android:layout_width="wrap_content"
@@ -39,16 +37,15 @@
                 android:textColor="@android:color/black" />
         </LinearLayout>
 
-        <!-- Nombre de la materia -->
         <TextView
             android:id="@+id/tvMateria"
-            android:layout_width="wrap_content"
+            android:layout_width="277dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text=""
+            android:textColor="@color/grisOscuro"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_marginBottom="8dp" />
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,7 +54,6 @@
             android:gravity="center_vertical"
             android:layout_marginBottom="4dp">
 
-            <!-- Icono check -->
             <ImageView
                 android:layout_width="16dp"
                 android:layout_height="16dp"
@@ -65,7 +61,6 @@
                 app:tint="@color/success"
                 android:layout_marginEnd="8dp" />
 
-            <!-- Condición de asistencia -->
             <TextView
                 android:id="@+id/tvCondicion"
                 android:layout_width="wrap_content"
@@ -81,10 +76,10 @@
             android:id="@+id/tvPorcentaje"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="75% de asistencia"
-            android:textSize="14sp"
             android:layout_marginBottom="12dp"
-            android:textColor="@color/menu_icon_gray" />
+            android:text="75% de asistencia"
+            android:textColor="@color/grisOscuro"
+            android:textSize="14sp" />
 
         <!-- Barra de progreso -->
         <ProgressBar
@@ -133,7 +128,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerAsistencias"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="211dp"
             android:nestedScrollingEnabled="false" />
     </LinearLayout>
 </ScrollView>

@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Nombre de la materia"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/textButtonColor"
             android:textSize="17sp"
             android:textStyle="bold" />
 

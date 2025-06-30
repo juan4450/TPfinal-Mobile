@@ -235,15 +235,14 @@
             android:id="@+id/btnCambiarContrasena"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:backgroundTint="@color/button"
             android:text="@string/profile_changePassword"
-            android:textColor="@color/black"
+            android:textColor="@color/textButtonColor"
             app:cornerRadius="24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="20dp"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
 

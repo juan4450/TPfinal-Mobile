@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:text="Primer Parcial"
-            android:textColor="@color/grisOscuro"
+            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <TextView

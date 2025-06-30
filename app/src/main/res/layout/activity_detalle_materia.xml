@@ -29,21 +29,24 @@
             android:id="@+id/btnVolver"
             android:layout_width="24dp"
             android:layout_height="41dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
             android:contentDescription="@string/volver"
             android:src="@drawable/ic_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
+        <!-- CARD: VENCIMIENTO -->
+
         <TextView
             android:id="@+id/tvNombreMateria"
-            android:layout_width="338dp"
+            android:layout_width="351dp"
             android:layout_height="59dp"
-            android:layout_margin="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="16dp"
             android:text="@string/materia_nombre_demo"
             android:textColor="@color/colorPrimary"
-            android:textSize="24sp"
+            android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -52,28 +55,32 @@
 
         <TextView
             android:id="@+id/tvProfesor"
-            android:layout_width="353dp"
-            android:layout_height="22dp"
+            android:layout_width="309dp"
+            android:layout_height="29dp"
             android:layout_margin="16dp"
+            android:layout_marginTop="16dp"
             android:text="@string/materia_profesor"
+            android:textColor="@color/grisOscuro"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.392"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvNombreMateria" />
 
         <TextView
             android:id="@+id/tvHorarios"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_width="325dp"
+            android:layout_height="33dp"
             android:layout_margin="16dp"
+            android:layout_marginTop="16dp"
             android:text="@string/materia_horarios"
+            android:textColor="@color/grisOscuro"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.511"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvProfesor" />
 
-        <!-- CARD: VENCIMIENTO -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardVencimiento"
             android:layout_width="0dp"
@@ -125,6 +132,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/vencimiento_fecha"
+                        android:textColor="@color/black"
                         android:textSize="17sp"
                         android:textStyle="bold" />
 
@@ -133,6 +141,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/vencimiento_tp"
+                        android:textColor="@color/black"
                         android:textSize="16sp" />
 
                     <TextView
@@ -142,7 +151,7 @@
                         android:layout_gravity="end"
                         android:padding="8dp"
                         android:text="@string/ver_vencimientos"
-                        android:textColor="@android:color/darker_gray"
+                        android:textColor="@color/grisOscuro"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
@@ -201,6 +210,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/calificaciones_nota"
+                        android:textColor="@color/black"
                         android:textSize="16sp" />
 
                     <TextView
@@ -209,7 +219,7 @@
                         android:layout_marginTop="6dp"
                         android:gravity="end"
                         android:text="@string/ver_calificaciones"
-                        android:textColor="@android:color/darker_gray"
+                        android:textColor="@color/grisOscuro"
                         android:textSize="15sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -269,6 +279,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/presentismo_valor"
+                        android:textColor="@color/black"
                         android:textSize="16sp" />
 
                     <TextView
@@ -277,7 +288,7 @@
                         android:layout_marginTop="6dp"
                         android:gravity="end"
                         android:text="@string/ver_presentismo"
-                        android:textColor="@android:color/darker_gray"
+                        android:textColor="@color/grisOscuro"
                         android:textSize="15sp" />
                 </LinearLayout>
             </LinearLayout>
