@@ -68,7 +68,7 @@
     <string name="materias_titulo">Materias en curso</string>
     <string name="materia_nombre_demo">Des. Aplicaciones para Dispositivos Móviles</string>
     <string name="materia_profesor">Prof. Alejandro Peña</string>
-    <string name="materia_horarios">Martes 18hs a 22hs - Miércoles 18hs a 22hs</string>
+    <string name="materia_horarios">Martes 18 a 22 - Miércoles 18 a 22</string>
     <string name="materias_subtitulo">IFTS 18 - Desarrollo de Software</string>
 
     <!-- Detalle Materia -->
@@ -84,7 +84,7 @@
     <!-- Vencimientos -->
     <string name="vencimientos_titulo">Vencimientos</string>
     <string name="ver_vencimientos">Ver vencimientos</string>
-    <string name="vencimiento_titulo">TP Pendiente</string>
+    <string name="vencimiento_titulo">Próximo vencimiento</string>
     <string name="vencimiento_titulo_asignatura">Asignatura</string>
     <string name="vencimiento_apertura">Apertura</string>
     <string name="vencimiento_cierre">Cierre</string>

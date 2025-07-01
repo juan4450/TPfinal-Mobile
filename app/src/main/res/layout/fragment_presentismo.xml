@@ -5,54 +5,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+   >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="12dp">
+            android:background="@android:color/white"
+            android:paddingTop="12dp"
+            android:paddingBottom="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
 
             <ImageView
                 android:id="@+id/btnVolver"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_back"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
                 android:contentDescription="@string/volver"
-                android:layout_marginEnd="12dp" />
+                android:src="@drawable/ic_back"
+                app:tint="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
             <TextView
                 android:id="@+id/tvTitulo"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_marginStart="5dp"
                 android:layout_height="wrap_content"
                 android:text="@string/presentismo_titulo"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:textStyle="bold"
-                android:textColor="@android:color/black" />
-        </LinearLayout>
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintStart_toEndOf="@id/btnVolver"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/btnVolver"/>
+            <TextView
+                android:id="@+id/tvMateria"
+                android:layout_width="367dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="8dp"
+                android:text="Nombre de la materia"
 
-        <TextView
-            android:id="@+id/tvMateria"
-            android:layout_width="277dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text=""
-            android:textColor="@color/grisOscuro"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+                android:textColor="@color/grisOscuro"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/tvTitulo"
+                app:layout_constraintTop_toBottomOf="@id/tvTitulo" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginBottom="4dp">
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp">
 
             <ImageView
                 android:layout_width="16dp"
@@ -66,7 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/asistencia_condicion"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/success"/>
         </LinearLayout>
@@ -79,7 +105,9 @@
             android:layout_marginBottom="12dp"
             android:text="75% de asistencia"
             android:textColor="@color/grisOscuro"
-            android:textSize="14sp" />
+            android:textSize="16sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
 
         <!-- Barra de progreso -->
         <ProgressBar
@@ -91,20 +119,24 @@
             android:progress="88"
             android:progressTint="@color/progressBar"
             android:indeterminateTint="@color/colorPrimary"
-            android:layout_marginBottom="24dp" />
+            android:layout_marginBottom="24dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="4dp">
+            android:paddingBottom="4dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:text="@string/asistencia_fecha"
                 android:textStyle="bold"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"/>
 
@@ -113,23 +145,28 @@
                 android:layout_weight="1"
                 android:text="@string/asistencia"
                 android:textStyle="bold"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:gravity="end"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                />
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/menu_icon_gray"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerAsistencias"
             android:layout_width="match_parent"
             android:layout_height="211dp"
-            android:nestedScrollingEnabled="false" />
+            android:nestedScrollingEnabled="false"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
     </LinearLayout>
 </ScrollView>
 

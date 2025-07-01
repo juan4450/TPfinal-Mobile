@@ -9,7 +9,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white">
+        android:background="@android:color/white"
+       >
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -22,31 +23,47 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
         <ImageView
             android:id="@+id/btnVolver"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/transparent"
             android:contentDescription="@string/volver"
             android:src="@drawable/ic_back"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:tint="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/toolbar_title" />
+
 
 
         <TextView
             android:id="@+id/toolbar_title"
             android:layout_width="0dp"
+            android:layout_marginStart="5dp"
             android:layout_height="wrap_content"
-            android:gravity="center|start"
             android:text="@string/proximos_vencimientos"
-            android:textColor="@color/colorPrimary"
-            android:textSize="22sp"
+            android:textSize="30sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/btnVolver"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/colorPrimary"
             app:layout_constraintStart_toEndOf="@id/btnVolver"
-            app:layout_constraintTop_toTopOf="@id/btnVolver" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/btnVolver"/>
 
 
         <TextView
@@ -59,54 +76,61 @@
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.545"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/toolbar_title"
             app:layout_constraintTop_toBottomOf="@id/toolbar_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/tvTpDetalle"
             android:layout_width="292dp"
             android:layout_height="29dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
             android:text="@string/vencimiento_tp"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@id/ivDescargar"
-            app:layout_constraintHorizontal_bias="0.48"
+            app:layout_constraintHorizontal_bias="0.83"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTituloMateria" />
+            app:layout_constraintTop_toBottomOf="@id/header_title" />
 
         <ImageView
             android:id="@+id/ivDescargar"
-            android:layout_width="41dp"
-            android:layout_height="25dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginEnd="28dp"
             android:contentDescription="@string/descargar"
             android:src="@drawable/ic_download"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/tvTpDetalle"
-            app:tint="@color/button" />
+            app:tint="@color/button"
+            />
 
         <View
-            android:layout_width="379dp"
+            android:layout_width="350dp"
             android:layout_height="2dp"
             android:layout_marginTop="12dp"
             android:background="@color/inputBorder"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTpDetalle" />
+            app:layout_constraintTop_toBottomOf="@id/tvTpDetalle"
+            />
 
         <TextView
             android:id="@+id/tvApertura"
             android:layout_width="369dp"
             android:layout_height="37dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="30dp"
             android:text="@string/vencimiento_apertura"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.571"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ivDescargar" />
 
@@ -114,13 +138,12 @@
             android:id="@+id/tvCierre"
             android:layout_width="368dp"
             android:layout_height="38dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="30dp"
             android:text="@string/vencimiento_cierre"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.558"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvApertura" />
 
@@ -128,34 +151,36 @@
             android:id="@+id/tvEstadoEntrega"
             android:layout_width="369dp"
             android:layout_height="45dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="30dp"
             android:text="@string/vencimiento_estado"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.571"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvCierre" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMarcarCompletado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:background="@drawable/bg_boton_redondeado_naranja"
-            android:drawableStart="@drawable/ic_check"
-            android:drawablePadding="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:backgroundTint="@color/button"
+            app:cornerRadius="24dp"
+            app:icon="@drawable/ic_check"
+            app:iconPadding="8dp"
+            app:iconGravity="textStart"
             android:paddingHorizontal="24dp"
             android:paddingVertical="12dp"
             android:text="@string/marcar_como_completa"
-            android:textAllCaps="true"
-            android:textColor="@color/textButtonColor"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvEstadoEntrega" />
-
-
+            app:layout_constraintTop_toBottomOf="@id/tvEstadoEntrega"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView

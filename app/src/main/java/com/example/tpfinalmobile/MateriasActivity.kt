@@ -39,7 +39,7 @@ class MateriasActivity : BaseActivity() {
                 presentismo = 75,
                 apertura = "15 de mayo de 2025",
                 profesor = "Prof. Alejandro Peña",
-                horarios = "Martes 18hs a 22hs - Miércoles 18hs a 22hs",
+                horarios = "Martes 18 a 22 - Miércoles 18 a 22",
                 esObligatoria = true
             ),
             Materia(
@@ -50,7 +50,7 @@ class MateriasActivity : BaseActivity() {
                 presentismo = 80,
                 apertura = "11 de mayo de 2025",
                 profesor = "Prof. Martínez",
-                horarios = "Lunes 18hs a 22hs - Miércoles 18hs a 22hs",
+                horarios = "Lunes 18 a 22 - Miércoles 18 a 22",
                 esObligatoria = false
             ),
             Materia(
@@ -61,7 +61,7 @@ class MateriasActivity : BaseActivity() {
                 presentismo = 65,
                 apertura = "3 de junio de 2025",
                 profesor = "Prof. Fernández",
-                horarios = "Martes 18hs a 22hs - Jueves 18hs a 22hs",
+                horarios = "Martes 18 a 22 - Jueves 18 a 22",
                 esObligatoria = false
             ),
             Materia(
@@ -72,7 +72,7 @@ class MateriasActivity : BaseActivity() {
                 presentismo = 75,
                 apertura = "7 de mayo de 2025",
                 profesor = "Prof. López",
-                horarios = "Miércoles 18hs a 22hs - Viernes 18hs a 22hs",
+                horarios = "Miércoles 18 a 22 - Viernes 18 a 22",
                 esObligatoria = false
             )
         )
