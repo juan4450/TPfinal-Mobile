@@ -51,6 +51,8 @@
                 android:id="@+id/tvTitulo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+
                 android:text="@string/acerca_titulo"
                 android:textSize="30sp"
                 android:textStyle="bold"

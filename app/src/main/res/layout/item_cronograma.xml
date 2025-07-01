@@ -17,7 +17,7 @@
     android:text="Lunes 18:00-22:00"
     android:textStyle="bold"
     android:textColor="@color/home_items_text"
-    android:textSize="14sp"
+    android:textSize="16sp"
     android:layout_marginBottom="4dp" />
 
     <!-- Materia -->
@@ -27,7 +27,7 @@
     android:layout_height="wrap_content"
     android:text="Práctica Profesional II"
     android:textColor="@color/home_items_text"
-    android:textSize="14sp"
+    android:textSize="16sp"
     android:layout_marginBottom="4dp" />
 
     <!-- Modo: punto de color + texto -->
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:text="Presencial"
             android:textColor="@color/home_items_text"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
     </LinearLayout>
 
 </LinearLayout>

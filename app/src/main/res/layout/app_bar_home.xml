@@ -97,7 +97,7 @@
             android:layout_marginStart="8dp"
             android:text="Asistencias"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="18sp"
            />
     </LinearLayout>
 
@@ -134,7 +134,7 @@
             android:layout_marginStart="8dp"
             android:text="Promedios"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="18sp"
           />
     </LinearLayout>
 
@@ -172,7 +172,7 @@
             android:layout_marginStart="8dp"
             android:text="Cronograma"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="18sp"
 
            />
     </LinearLayout>
